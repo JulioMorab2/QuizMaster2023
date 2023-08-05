@@ -71,6 +71,8 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="ApplicationController\AlumnosController.cs" />
+    <Compile Include="ApplicationController\AlumnosGruposController.cs" />
     <Compile Include="ApplicationController\Cat_TipoDocumentoController.cs" />
     <Compile Include="ApplicationController\CuestionariosController.cs" />
     <Compile Include="ApplicationController\InstruccionesController.cs" />
@@ -164,6 +166,8 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="ViewModel\AlumnosGruposViewModel.cs" />
+    <Compile Include="ViewModel\AlumnosViewModel.cs" />
     <Compile Include="ViewModel\Cat_TipoDocumentoViewModel.cs" />
     <Compile Include="ViewModel\CuestionariosViewModel.cs" />
     <Compile Include="ViewModel\InstruccionesViewModel.cs" />

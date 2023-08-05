@@ -36,6 +36,7 @@
     <NavigationProperty Name="Alumnos" Relationship="Self.FK_AsignacionCuestionario_Alumnos" FromRole="AsignacionCuestionario" ToRole="Alumnos" />
     <NavigationProperty Name="Cuestionarios" Relationship="Self.FK_AsignacionCuestionario_Cuestionarios" FromRole="AsignacionCuestionario" ToRole="Cuestionarios" />
     <NavigationProperty Name="Usuarios" Relationship="Self.FK_AsignacionCuestionario_Usuarios" FromRole="AsignacionCuestionario" ToRole="Usuarios" />
+    <NavigationProperty Name="RespuestasAlumnosCuestionarios" Relationship="Self.FK_RespuestasAlumnosCuestionarios_AsignacionCuestionario" FromRole="AsignacionCuestionario" ToRole="RespuestasAlumnosCuestionarios" />
   </EntityType>
   <EntityType Name="Cat_TipoDocumento">
     <Key>
@@ -56,6 +57,7 @@
     <Property Name="Nivel" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
     <Property Name="Curso" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
     <Property Name="Area" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="PorcentajeAprendizaje" Type="Decimal" Precision="5" Scale="2" />
     <Property Name="IDQuimestre" Type="Int32" Nullable="false" />
     <Property Name="IDUsuario" Type="Int32" Nullable="false" />
     <Property Name="IDMateria" Type="Int32" Nullable="false" />
@@ -111,6 +113,18 @@
     <Property Name="Respuesta" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
     <Property Name="EsCorrecta" Type="Boolean" />
     <NavigationProperty Name="Preguntas" Relationship="Self.FK_Respuestas_Preguntas" FromRole="Respuestas" ToRole="Preguntas" />
+    <NavigationProperty Name="RespuestasAlumnosCuestionarios" Relationship="Self.FK_RespuestasAlumnosCuestionarios_Respuestas" FromRole="Respuestas" ToRole="RespuestasAlumnosCuestionarios" />
+  </EntityType>
+  <EntityType Name="RespuestasAlumnosCuestionarios">
+    <Key>
+      <PropertyRef Name="IDRespuestasAlumnosCuestionarios" />
+    </Key>
+    <Property Name="IDRespuestasAlumnosCuestionarios" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="IDRespuesta" Type="Int32" />
+    <Property Name="TextoRespuesta" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="IDAsignacionCuestionario" Type="Int32" Nullable="false" />
+    <NavigationProperty Name="AsignacionCuestionario" Relationship="Self.FK_RespuestasAlumnosCuestionarios_AsignacionCuestionario" FromRole="RespuestasAlumnosCuestionarios" ToRole="AsignacionCuestionario" />
+    <NavigationProperty Name="Respuestas" Relationship="Self.FK_RespuestasAlumnosCuestionarios_Respuestas" FromRole="RespuestasAlumnosCuestionarios" ToRole="Respuestas" />
   </EntityType>
   <EntityType Name="Usuarios">
     <Key>
@@ -181,6 +195,18 @@
       </Principal>
       <Dependent Role="AsignacionCuestionario">
         <PropertyRef Name="IDUsuario" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_RespuestasAlumnosCuestionarios_AsignacionCuestionario">
+    <End Role="AsignacionCuestionario" Type="Self.AsignacionCuestionario" Multiplicity="1" />
+    <End Role="RespuestasAlumnosCuestionarios" Type="Self.RespuestasAlumnosCuestionarios" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="AsignacionCuestionario">
+        <PropertyRef Name="IDAsignacionCuestionario" />
+      </Principal>
+      <Dependent Role="RespuestasAlumnosCuestionarios">
+        <PropertyRef Name="IDAsignacionCuestionario" />
       </Dependent>
     </ReferentialConstraint>
   </Association>
@@ -256,7 +282,19 @@
       </Dependent>
     </ReferentialConstraint>
   </Association>
-  <EntityContainer Name="QuizMasterEntities1" annotation:LazyLoadingEnabled="true">
+  <Association Name="FK_RespuestasAlumnosCuestionarios_Respuestas">
+    <End Role="Respuestas" Type="Self.Respuestas" Multiplicity="0..1" />
+    <End Role="RespuestasAlumnosCuestionarios" Type="Self.RespuestasAlumnosCuestionarios" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Respuestas">
+        <PropertyRef Name="IDRespuesta" />
+      </Principal>
+      <Dependent Role="RespuestasAlumnosCuestionarios">
+        <PropertyRef Name="IDRespuesta" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityContainer Name="QuizMasterEntities" annotation:LazyLoadingEnabled="true">
     <EntitySet Name="Alumnos" EntityType="Self.Alumnos" />
     <EntitySet Name="AlumnosGrupos" EntityType="Self.AlumnosGrupos" />
     <EntitySet Name="AsignacionCuestionario" EntityType="Self.AsignacionCuestionario" />
@@ -267,6 +305,7 @@
     <EntitySet Name="Preguntas" EntityType="Self.Preguntas" />
     <EntitySet Name="Quimestre" EntityType="Self.Quimestre" />
     <EntitySet Name="Respuestas" EntityType="Self.Respuestas" />
+    <EntitySet Name="RespuestasAlumnosCuestionarios" EntityType="Self.RespuestasAlumnosCuestionarios" />
     <EntitySet Name="Usuarios" EntityType="Self.Usuarios" />
     <AssociationSet Name="FK_Alumnos_AlumnosGrupos" Association="Self.FK_Alumnos_AlumnosGrupos">
       <End Role="AlumnosGrupos" EntitySet="AlumnosGrupos" />
@@ -287,6 +326,10 @@
     <AssociationSet Name="FK_AsignacionCuestionario_Usuarios" Association="Self.FK_AsignacionCuestionario_Usuarios">
       <End Role="Usuarios" EntitySet="Usuarios" />
       <End Role="AsignacionCuestionario" EntitySet="AsignacionCuestionario" />
+    </AssociationSet>
+    <AssociationSet Name="FK_RespuestasAlumnosCuestionarios_AsignacionCuestionario" Association="Self.FK_RespuestasAlumnosCuestionarios_AsignacionCuestionario">
+      <End Role="AsignacionCuestionario" EntitySet="AsignacionCuestionario" />
+      <End Role="RespuestasAlumnosCuestionarios" EntitySet="RespuestasAlumnosCuestionarios" />
     </AssociationSet>
     <AssociationSet Name="FK_Cuestionarios_Instrucciones" Association="Self.FK_Cuestionarios_Instrucciones">
       <End Role="Instrucciones" EntitySet="Instrucciones" />
@@ -311,6 +354,10 @@
     <AssociationSet Name="FK_Respuestas_Preguntas" Association="Self.FK_Respuestas_Preguntas">
       <End Role="Preguntas" EntitySet="Preguntas" />
       <End Role="Respuestas" EntitySet="Respuestas" />
+    </AssociationSet>
+    <AssociationSet Name="FK_RespuestasAlumnosCuestionarios_Respuestas" Association="Self.FK_RespuestasAlumnosCuestionarios_Respuestas">
+      <End Role="Respuestas" EntitySet="Respuestas" />
+      <End Role="RespuestasAlumnosCuestionarios" EntitySet="RespuestasAlumnosCuestionarios" />
     </AssociationSet>
   </EntityContainer>
 </Schema>

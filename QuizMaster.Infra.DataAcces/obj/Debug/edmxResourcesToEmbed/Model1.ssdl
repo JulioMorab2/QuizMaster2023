@@ -48,6 +48,7 @@
     <Property Name="Nivel" Type="nvarchar" MaxLength="200" />
     <Property Name="Curso" Type="nvarchar" MaxLength="50" />
     <Property Name="Area" Type="nvarchar" MaxLength="50" />
+    <Property Name="PorcentajeAprendizaje" Type="decimal" Precision="5" Scale="2" />
     <Property Name="IDQuimestre" Type="int" Nullable="false" />
     <Property Name="IDUsuario" Type="int" Nullable="false" />
     <Property Name="IDMateria" Type="int" Nullable="false" />
@@ -91,6 +92,15 @@
     <Property Name="IDPregunta" Type="int" />
     <Property Name="Respuesta" Type="nvarchar" MaxLength="255" />
     <Property Name="EsCorrecta" Type="bit" />
+  </EntityType>
+  <EntityType Name="RespuestasAlumnosCuestionarios">
+    <Key>
+      <PropertyRef Name="IDRespuestasAlumnosCuestionarios" />
+    </Key>
+    <Property Name="IDRespuestasAlumnosCuestionarios" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="IDRespuesta" Type="int" />
+    <Property Name="TextoRespuesta" Type="nvarchar(max)" />
+    <Property Name="IDAsignacionCuestionario" Type="int" Nullable="false" />
   </EntityType>
   <EntityType Name="Usuarios">
     <Key>
@@ -234,6 +244,30 @@
       </Dependent>
     </ReferentialConstraint>
   </Association>
+  <Association Name="FK_RespuestasAlumnosCuestionarios_AsignacionCuestionario">
+    <End Role="AsignacionCuestionario" Type="Self.AsignacionCuestionario" Multiplicity="1" />
+    <End Role="RespuestasAlumnosCuestionarios" Type="Self.RespuestasAlumnosCuestionarios" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="AsignacionCuestionario">
+        <PropertyRef Name="IDAsignacionCuestionario" />
+      </Principal>
+      <Dependent Role="RespuestasAlumnosCuestionarios">
+        <PropertyRef Name="IDAsignacionCuestionario" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_RespuestasAlumnosCuestionarios_Respuestas">
+    <End Role="Respuestas" Type="Self.Respuestas" Multiplicity="0..1" />
+    <End Role="RespuestasAlumnosCuestionarios" Type="Self.RespuestasAlumnosCuestionarios" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Respuestas">
+        <PropertyRef Name="IDRespuesta" />
+      </Principal>
+      <Dependent Role="RespuestasAlumnosCuestionarios">
+        <PropertyRef Name="IDRespuesta" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
   <EntityContainer Name="QuizMasterModelStoreContainer">
     <EntitySet Name="Alumnos" EntityType="Self.Alumnos" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="AlumnosGrupos" EntityType="Self.AlumnosGrupos" Schema="dbo" store:Type="Tables" />
@@ -245,6 +279,7 @@
     <EntitySet Name="Preguntas" EntityType="Self.Preguntas" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="Quimestre" EntityType="Self.Quimestre" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="Respuestas" EntityType="Self.Respuestas" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="RespuestasAlumnosCuestionarios" EntityType="Self.RespuestasAlumnosCuestionarios" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="Usuarios" EntityType="Self.Usuarios" Schema="dbo" store:Type="Tables" />
     <AssociationSet Name="FK_Alumnos_AlumnosGrupos" Association="Self.FK_Alumnos_AlumnosGrupos">
       <End Role="AlumnosGrupos" EntitySet="AlumnosGrupos" />
@@ -289,6 +324,14 @@
     <AssociationSet Name="FK_Respuestas_Preguntas" Association="Self.FK_Respuestas_Preguntas">
       <End Role="Preguntas" EntitySet="Preguntas" />
       <End Role="Respuestas" EntitySet="Respuestas" />
+    </AssociationSet>
+    <AssociationSet Name="FK_RespuestasAlumnosCuestionarios_AsignacionCuestionario" Association="Self.FK_RespuestasAlumnosCuestionarios_AsignacionCuestionario">
+      <End Role="AsignacionCuestionario" EntitySet="AsignacionCuestionario" />
+      <End Role="RespuestasAlumnosCuestionarios" EntitySet="RespuestasAlumnosCuestionarios" />
+    </AssociationSet>
+    <AssociationSet Name="FK_RespuestasAlumnosCuestionarios_Respuestas" Association="Self.FK_RespuestasAlumnosCuestionarios_Respuestas">
+      <End Role="Respuestas" EntitySet="Respuestas" />
+      <End Role="RespuestasAlumnosCuestionarios" EntitySet="RespuestasAlumnosCuestionarios" />
     </AssociationSet>
   </EntityContainer>
 </Schema>

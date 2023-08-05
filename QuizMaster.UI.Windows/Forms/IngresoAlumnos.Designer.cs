@@ -34,12 +34,12 @@
             this.txtNumIdentificacion = new System.Windows.Forms.Label();
             this.txtApellidos = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
-            this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
+            this.dateFechaNacimiento = new System.Windows.Forms.DateTimePicker();
             this.label5 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
+            this.cbIDCat_TipoDocumento = new System.Windows.Forms.ComboBox();
             this.label7 = new System.Windows.Forms.Label();
-            this.comboBox2 = new System.Windows.Forms.ComboBox();
+            this.cbIDAlumnoGrupo = new System.Windows.Forms.ComboBox();
             this.button1 = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
@@ -91,12 +91,12 @@
             this.label3.TabIndex = 4;
             this.label3.Text = "Apellidos";
             // 
-            // dateTimePicker1
+            // dateFechaNacimiento
             // 
-            this.dateTimePicker1.Location = new System.Drawing.Point(182, 152);
-            this.dateTimePicker1.Name = "dateTimePicker1";
-            this.dateTimePicker1.Size = new System.Drawing.Size(200, 20);
-            this.dateTimePicker1.TabIndex = 8;
+            this.dateFechaNacimiento.Location = new System.Drawing.Point(182, 152);
+            this.dateFechaNacimiento.Name = "dateFechaNacimiento";
+            this.dateFechaNacimiento.Size = new System.Drawing.Size(200, 20);
+            this.dateFechaNacimiento.TabIndex = 8;
             // 
             // label5
             // 
@@ -116,13 +116,13 @@
             this.label6.TabIndex = 10;
             this.label6.Text = "Tipo Documento";
             // 
-            // comboBox1
+            // cbIDCat_TipoDocumento
             // 
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Location = new System.Drawing.Point(182, 193);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(200, 21);
-            this.comboBox1.TabIndex = 11;
+            this.cbIDCat_TipoDocumento.FormattingEnabled = true;
+            this.cbIDCat_TipoDocumento.Location = new System.Drawing.Point(182, 193);
+            this.cbIDCat_TipoDocumento.Name = "cbIDCat_TipoDocumento";
+            this.cbIDCat_TipoDocumento.Size = new System.Drawing.Size(200, 21);
+            this.cbIDCat_TipoDocumento.TabIndex = 11;
             // 
             // label7
             // 
@@ -133,13 +133,13 @@
             this.label7.TabIndex = 12;
             this.label7.Text = "Grupo";
             // 
-            // comboBox2
+            // cbIDAlumnoGrupo
             // 
-            this.comboBox2.FormattingEnabled = true;
-            this.comboBox2.Location = new System.Drawing.Point(182, 227);
-            this.comboBox2.Name = "comboBox2";
-            this.comboBox2.Size = new System.Drawing.Size(200, 21);
-            this.comboBox2.TabIndex = 14;
+            this.cbIDAlumnoGrupo.FormattingEnabled = true;
+            this.cbIDAlumnoGrupo.Location = new System.Drawing.Point(182, 227);
+            this.cbIDAlumnoGrupo.Name = "cbIDAlumnoGrupo";
+            this.cbIDAlumnoGrupo.Size = new System.Drawing.Size(200, 21);
+            this.cbIDAlumnoGrupo.TabIndex = 14;
             // 
             // button1
             // 
@@ -149,6 +149,7 @@
             this.button1.TabIndex = 15;
             this.button1.Text = "Guardar";
             this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // IngresoAlumnos
             // 
@@ -156,12 +157,12 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(500, 367);
             this.Controls.Add(this.button1);
-            this.Controls.Add(this.comboBox2);
+            this.Controls.Add(this.cbIDAlumnoGrupo);
             this.Controls.Add(this.label7);
-            this.Controls.Add(this.comboBox1);
+            this.Controls.Add(this.cbIDCat_TipoDocumento);
             this.Controls.Add(this.label6);
             this.Controls.Add(this.label5);
-            this.Controls.Add(this.dateTimePicker1);
+            this.Controls.Add(this.dateFechaNacimiento);
             this.Controls.Add(this.txtApellidos);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.textBox2);
@@ -170,6 +171,7 @@
             this.Controls.Add(this.label1);
             this.Name = "IngresoAlumnos";
             this.Text = "IngresoAlumnos";
+            this.Load += new System.EventHandler(this.IngresoAlumnos_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -183,12 +185,12 @@
         private System.Windows.Forms.Label txtNumIdentificacion;
         private System.Windows.Forms.TextBox txtApellidos;
         private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.DateTimePicker dateTimePicker1;
+        private System.Windows.Forms.DateTimePicker dateFechaNacimiento;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.ComboBox comboBox1;
+        private System.Windows.Forms.ComboBox cbIDCat_TipoDocumento;
         private System.Windows.Forms.Label label7;
-        private System.Windows.Forms.ComboBox comboBox2;
+        private System.Windows.Forms.ComboBox cbIDAlumnoGrupo;
         private System.Windows.Forms.Button button1;
     }
 }

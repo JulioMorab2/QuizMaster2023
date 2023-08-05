@@ -6,11 +6,10 @@ using System.Threading.Tasks;
 
 namespace QuizMaster.UI.Windows.ViewModel
 {
-    public class Cat_TipoDocumentoViewModel
+    public class AlumnosGruposViewModel
     {
-        public int IDCat_TipoDocumento { get; set; }    
+        public int IDAlumnoGrupo { get; set; }
         public string Descripcion { get; set; }
-        public Nullable<bool> Estado { get; set; }
         public string descripcionCombo { get; set; }
     }
 }

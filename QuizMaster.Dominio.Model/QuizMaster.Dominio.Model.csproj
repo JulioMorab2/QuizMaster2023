@@ -44,6 +44,8 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Abstractions\IAlumnosGruposRepository.cs" />
+    <Compile Include="Abstractions\IAlumnosRepository.cs" />
     <Compile Include="Abstractions\IBaseRepository.cs" />
     <Compile Include="Abstractions\ICat_TipoDocumentoRepository.cs" />
     <Compile Include="Abstractions\ICuestionariosRepository.cs" />
