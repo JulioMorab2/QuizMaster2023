@@ -1,0 +1,7 @@
+C:\ProyectosUisraelNet\QuizMaster\QuizMaster\QuizMaster.Apli.AplicationDTO\bin\Debug\QuizMaster.Apli.AplicationDTO.dll.config
+C:\ProyectosUisraelNet\QuizMaster\QuizMaster\QuizMaster.Apli.AplicationDTO\bin\Debug\QuizMaster.Apli.AplicationDTO.dll
+C:\ProyectosUisraelNet\QuizMaster\QuizMaster\QuizMaster.Apli.AplicationDTO\bin\Debug\QuizMaster.Apli.AplicationDTO.pdb
+C:\ProyectosUisraelNet\QuizMaster\QuizMaster\QuizMaster.Apli.AplicationDTO\obj\Debug\QuizMaster.Apli.AplicationDTO.csproj.AssemblyReference.cache
+C:\ProyectosUisraelNet\QuizMaster\QuizMaster\QuizMaster.Apli.AplicationDTO\obj\Debug\QuizMaster.Apli.AplicationDTO.csproj.CoreCompileInputs.cache
+C:\ProyectosUisraelNet\QuizMaster\QuizMaster\QuizMaster.Apli.AplicationDTO\obj\Debug\QuizMaster.Apli.AplicationDTO.dll
+C:\ProyectosUisraelNet\QuizMaster\QuizMaster\QuizMaster.Apli.AplicationDTO\obj\Debug\QuizMaster.Apli.AplicationDTO.pdb

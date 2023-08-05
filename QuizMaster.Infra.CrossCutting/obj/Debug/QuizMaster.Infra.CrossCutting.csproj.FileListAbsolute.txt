@@ -1,0 +1,7 @@
+C:\ProyectosUisraelNet\QuizMaster\QuizMaster\QuizMaster.Infra.CrossCutting\bin\Debug\QuizMaster.Infra.CrossCutting.dll.config
+C:\ProyectosUisraelNet\QuizMaster\QuizMaster\QuizMaster.Infra.CrossCutting\bin\Debug\QuizMaster.Infra.CrossCutting.dll
+C:\ProyectosUisraelNet\QuizMaster\QuizMaster\QuizMaster.Infra.CrossCutting\bin\Debug\QuizMaster.Infra.CrossCutting.pdb
+C:\ProyectosUisraelNet\QuizMaster\QuizMaster\QuizMaster.Infra.CrossCutting\obj\Debug\QuizMaster.Infra.CrossCutting.csproj.AssemblyReference.cache
+C:\ProyectosUisraelNet\QuizMaster\QuizMaster\QuizMaster.Infra.CrossCutting\obj\Debug\QuizMaster.Infra.CrossCutting.csproj.CoreCompileInputs.cache
+C:\ProyectosUisraelNet\QuizMaster\QuizMaster\QuizMaster.Infra.CrossCutting\obj\Debug\QuizMaster.Infra.CrossCutting.dll
+C:\ProyectosUisraelNet\QuizMaster\QuizMaster\QuizMaster.Infra.CrossCutting\obj\Debug\QuizMaster.Infra.CrossCutting.pdb

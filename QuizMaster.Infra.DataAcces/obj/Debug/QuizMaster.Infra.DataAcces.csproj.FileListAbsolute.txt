@@ -1,0 +1,15 @@
+C:\ProyectosUisraelNet\QuizMaster\QuizMaster\QuizMaster.Infra.DataAcces\obj\Debug\QuizMaster.Infra.DataAcces.csproj.AssemblyReference.cache
+C:\ProyectosUisraelNet\QuizMaster\QuizMaster\QuizMaster.Infra.DataAcces\obj\Debug\QuizMaster.Infra.DataAcces.csproj.CoreCompileInputs.cache
+C:\ProyectosUisraelNet\QuizMaster\QuizMaster\QuizMaster.Infra.DataAcces\bin\Debug\QuizMaster.Infra.DataAcces.dll.config
+C:\ProyectosUisraelNet\QuizMaster\QuizMaster\QuizMaster.Infra.DataAcces\bin\Debug\QuizMaster.Infra.DataAcces.dll
+C:\ProyectosUisraelNet\QuizMaster\QuizMaster\QuizMaster.Infra.DataAcces\bin\Debug\QuizMaster.Infra.DataAcces.pdb
+C:\ProyectosUisraelNet\QuizMaster\QuizMaster\QuizMaster.Infra.DataAcces\bin\Debug\EntityFramework.dll
+C:\ProyectosUisraelNet\QuizMaster\QuizMaster\QuizMaster.Infra.DataAcces\bin\Debug\EntityFramework.SqlServer.dll
+C:\ProyectosUisraelNet\QuizMaster\QuizMaster\QuizMaster.Infra.DataAcces\bin\Debug\QuizMaster.Dominio.Model.dll
+C:\ProyectosUisraelNet\QuizMaster\QuizMaster\QuizMaster.Infra.DataAcces\bin\Debug\QuizMaster.Dominio.Model.pdb
+C:\ProyectosUisraelNet\QuizMaster\QuizMaster\QuizMaster.Infra.DataAcces\bin\Debug\QuizMaster.Dominio.Model.dll.config
+C:\ProyectosUisraelNet\QuizMaster\QuizMaster\QuizMaster.Infra.DataAcces\bin\Debug\EntityFramework.xml
+C:\ProyectosUisraelNet\QuizMaster\QuizMaster\QuizMaster.Infra.DataAcces\bin\Debug\EntityFramework.SqlServer.xml
+C:\ProyectosUisraelNet\QuizMaster\QuizMaster\QuizMaster.Infra.DataAcces\obj\Debug\QuizMaster.Infra.DataAcces.csproj.CopyComplete
+C:\ProyectosUisraelNet\QuizMaster\QuizMaster\QuizMaster.Infra.DataAcces\obj\Debug\QuizMaster.Infra.DataAcces.dll
+C:\ProyectosUisraelNet\QuizMaster\QuizMaster\QuizMaster.Infra.DataAcces\obj\Debug\QuizMaster.Infra.DataAcces.pdb

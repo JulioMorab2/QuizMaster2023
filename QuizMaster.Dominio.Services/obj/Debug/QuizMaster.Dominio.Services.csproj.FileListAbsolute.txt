@@ -1,0 +1,7 @@
+C:\ProyectosUisraelNet\QuizMaster\QuizMaster\QuizMaster.Dominio.Services\bin\Debug\QuizMaster.Dominio.Services.dll.config
+C:\ProyectosUisraelNet\QuizMaster\QuizMaster\QuizMaster.Dominio.Services\bin\Debug\QuizMaster.Dominio.Services.dll
+C:\ProyectosUisraelNet\QuizMaster\QuizMaster\QuizMaster.Dominio.Services\bin\Debug\QuizMaster.Dominio.Services.pdb
+C:\ProyectosUisraelNet\QuizMaster\QuizMaster\QuizMaster.Dominio.Services\obj\Debug\QuizMaster.Dominio.Services.csproj.AssemblyReference.cache
+C:\ProyectosUisraelNet\QuizMaster\QuizMaster\QuizMaster.Dominio.Services\obj\Debug\QuizMaster.Dominio.Services.csproj.CoreCompileInputs.cache
+C:\ProyectosUisraelNet\QuizMaster\QuizMaster\QuizMaster.Dominio.Services\obj\Debug\QuizMaster.Dominio.Services.dll
+C:\ProyectosUisraelNet\QuizMaster\QuizMaster\QuizMaster.Dominio.Services\obj\Debug\QuizMaster.Dominio.Services.pdb
