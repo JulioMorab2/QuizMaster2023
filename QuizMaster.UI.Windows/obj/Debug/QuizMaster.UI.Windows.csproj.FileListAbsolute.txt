@@ -112,3 +112,6 @@ C:\ProyectosUisraelNet\QuizMaster\QuizMasterLocal\QuizMaster.UI.Windows\obj\Debu
 C:\ProyectosUisraelNet\QuizMaster\QuizMasterLocal\QuizMaster.UI.Windows\obj\Debug\QuizMaster.UI.Windows.csproj.CopyComplete
 C:\ProyectosUisraelNet\QuizMaster\QuizMasterLocal\QuizMaster.UI.Windows\obj\Debug\QuizMaster.UI.Windows.exe
 C:\ProyectosUisraelNet\QuizMaster\QuizMasterLocal\QuizMaster.UI.Windows\obj\Debug\QuizMaster.UI.Windows.pdb
+C:\ProyectosUisraelNet\QuizMaster\QuizMasterLocal\QuizMaster.UI.Windows\bin\Debug\MetroFramework.Design.dll
+C:\ProyectosUisraelNet\QuizMaster\QuizMasterLocal\QuizMaster.UI.Windows\bin\Debug\MetroFramework.dll
+C:\ProyectosUisraelNet\QuizMaster\QuizMasterLocal\QuizMaster.UI.Windows\bin\Debug\MetroFramework.Fonts.dll

@@ -12,7 +12,7 @@ using System.Windows.Forms;
 
 namespace QuizMaster.UI.Windows.Forms
 {
-    public partial class IngresoAlumnos : Form
+    public partial class IngresoAlumnos : MetroFramework.Forms.MetroForm
     {
         AlumnosController alumnosController;
         AlumnosGruposController alumnosGruposController;
