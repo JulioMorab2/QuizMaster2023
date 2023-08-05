@@ -5,3 +5,10 @@ C:\ProyectosUisraelNet\QuizMaster\QuizMaster\QuizMaster.Apli.AplicationDTO\obj\D
 C:\ProyectosUisraelNet\QuizMaster\QuizMaster\QuizMaster.Apli.AplicationDTO\obj\Debug\QuizMaster.Apli.AplicationDTO.csproj.CoreCompileInputs.cache
 C:\ProyectosUisraelNet\QuizMaster\QuizMaster\QuizMaster.Apli.AplicationDTO\obj\Debug\QuizMaster.Apli.AplicationDTO.dll
 C:\ProyectosUisraelNet\QuizMaster\QuizMaster\QuizMaster.Apli.AplicationDTO\obj\Debug\QuizMaster.Apli.AplicationDTO.pdb
+C:\Users\Juls\Downloads\Germán\Proyecto\QuizMasterDOMINGO\QuizMaster\QuizMaster2023\QuizMaster.Apli.AplicationDTO\bin\Debug\QuizMaster.Apli.AplicationDTO.dll.config
+C:\Users\Juls\Downloads\Germán\Proyecto\QuizMasterDOMINGO\QuizMaster\QuizMaster2023\QuizMaster.Apli.AplicationDTO\bin\Debug\QuizMaster.Apli.AplicationDTO.dll
+C:\Users\Juls\Downloads\Germán\Proyecto\QuizMasterDOMINGO\QuizMaster\QuizMaster2023\QuizMaster.Apli.AplicationDTO\bin\Debug\QuizMaster.Apli.AplicationDTO.pdb
+C:\Users\Juls\Downloads\Germán\Proyecto\QuizMasterDOMINGO\QuizMaster\QuizMaster2023\QuizMaster.Apli.AplicationDTO\obj\Debug\QuizMaster.Apli.AplicationDTO.csproj.AssemblyReference.cache
+C:\Users\Juls\Downloads\Germán\Proyecto\QuizMasterDOMINGO\QuizMaster\QuizMaster2023\QuizMaster.Apli.AplicationDTO\obj\Debug\QuizMaster.Apli.AplicationDTO.csproj.CoreCompileInputs.cache
+C:\Users\Juls\Downloads\Germán\Proyecto\QuizMasterDOMINGO\QuizMaster\QuizMaster2023\QuizMaster.Apli.AplicationDTO\obj\Debug\QuizMaster.Apli.AplicationDTO.dll
+C:\Users\Juls\Downloads\Germán\Proyecto\QuizMasterDOMINGO\QuizMaster\QuizMaster2023\QuizMaster.Apli.AplicationDTO\obj\Debug\QuizMaster.Apli.AplicationDTO.pdb
