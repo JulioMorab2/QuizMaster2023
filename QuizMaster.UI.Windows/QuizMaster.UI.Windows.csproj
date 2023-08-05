@@ -150,6 +150,12 @@
     <Compile Include="Forms\FormularioResolverPreguntas.Designer.cs">
       <DependentUpon>FormularioResolverPreguntas.cs</DependentUpon>
     </Compile>
+    <Compile Include="Forms\IngresoAlumnos.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\IngresoAlumnos.Designer.cs">
+      <DependentUpon>IngresoAlumnos.cs</DependentUpon>
+    </Compile>
     <Compile Include="Forms\Loggin.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -165,6 +171,9 @@
     <Compile Include="ViewModel\PreguntasViewModel.cs" />
     <Compile Include="ViewModel\QuimestreViewModel.cs" />
     <Compile Include="ViewModel\RespuestasViewModel.cs" />
+    <EmbeddedResource Include="Forms\AlumnosGrupos.resx">
+      <DependentUpon>AlumnosGrupos.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Forms\Cat_TipoDocumento.resx">
       <DependentUpon>Cat_TipoDocumento.cs</DependentUpon>
     </EmbeddedResource>
@@ -188,6 +197,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\FormularioResolverPreguntas.resx">
       <DependentUpon>FormularioResolverPreguntas.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\IngresoAlumnos.resx">
+      <DependentUpon>IngresoAlumnos.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\Loggin.resx">
       <DependentUpon>Loggin.cs</DependentUpon>

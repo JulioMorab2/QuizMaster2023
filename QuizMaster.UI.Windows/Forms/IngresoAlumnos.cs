@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace QuizMaster.UI.Windows.Forms
 {
-    public partial class IngresoGrupo : Form
+    public partial class IngresoAlumnos : Form
     {
-        public IngresoGrupo()
+        public IngresoAlumnos()
         {
             InitializeComponent();
         }
