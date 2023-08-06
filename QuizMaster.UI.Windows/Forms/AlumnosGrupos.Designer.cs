@@ -71,6 +71,7 @@
             this.Controls.Add(this.btnQuimestre);
             this.Name = "IngresoGrupo";
             this.Text = "IngresoGrupo";
+            this.Load += new System.EventHandler(this.IngresoGrupo_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 

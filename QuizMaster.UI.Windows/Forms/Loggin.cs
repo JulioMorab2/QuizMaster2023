@@ -39,12 +39,14 @@ namespace QuizMaster.UI.Windows.Forms
            if(controllerUsuarios.BuscarUsusarios(mtxtUsuarios.Text, mtxtUsuariocontraseña.Text))
             {
 
-                MessageBox.Show("Ususario activo");
+                //MessageBox.Show("Ususario activo");
+               
                 MDIQuizMaster childFormPrincipal = new MDIQuizMaster();
                 //childFormCategoria.MdiParent = this;
                 childFormPrincipal.Show();
                 this.Close();
-                
+
+
 
             }
 

@@ -16,5 +16,10 @@ namespace QuizMaster.UI.Windows.Forms
         {
             InitializeComponent();
         }
+
+        private void IngresoGrupo_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }

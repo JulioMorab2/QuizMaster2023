@@ -113,5 +113,42 @@ namespace QuizMaster.UI.Windows.Forms
         {
 
         }
+
+        private void registroTiposDeDocumentosToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            FormCat_TipoDocumento tipoDocumento = new FormCat_TipoDocumento();
+            tipoDocumento.MdiParent = this;
+            tipoDocumento.Show();
+
+        }
+
+        private void registrosDeTiposGruposToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            IngresoGrupo ingresoGrupo = new IngresoGrupo();
+            ingresoGrupo.MdiParent = this;
+            ingresoGrupo.Show();
+        }
+
+        private void registroDeMateriaToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            FormMaterias formMaterias = new FormMaterias();
+            formMaterias.MdiParent = this;
+            formMaterias.Show();
+
+        }
+
+        private void registroDeQuimestreToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            FormQuimestres formQuimestres = new FormQuimestres();
+            formQuimestres.MdiParent = this;
+            formQuimestres.Show();
+        }
+
+        private void ingresoAlumnoToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            IngresoAlumnos ingresoAlumnos = new IngresoAlumnos();
+            ingresoAlumnos.MdiParent = this;
+            ingresoAlumnos.Show();
+        }
     }
 }
