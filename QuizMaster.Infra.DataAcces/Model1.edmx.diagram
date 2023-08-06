@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="d43c80a8980b439f85352f86c9027e85" Name="Diagram1">
+        <EntityTypeShape EntityType="QuizMasterModel.Alumnos" Width="1.5" PointX="0.75" PointY="9.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="QuizMasterModel.AlumnosGrupos" Width="1.5" PointX="1.5" PointY="13.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="QuizMasterModel.AsignacionCuestionario" Width="1.5" PointX="3" PointY="3.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="QuizMasterModel.Cat_TipoDocumento" Width="1.5" PointX="1.5" PointY="16.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="QuizMasterModel.Cuestionarios" Width="1.5" PointX="6" PointY="3" IsExpanded="true" />
+        <EntityTypeShape EntityType="QuizMasterModel.Instrucciones" Width="1.5" PointX="3.75" PointY="1" IsExpanded="true" />
+        <EntityTypeShape EntityType="QuizMasterModel.Materias" Width="1.5" PointX="3.75" PointY="8.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="QuizMasterModel.Preguntas" Width="1.5" PointX="8.25" PointY="3.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="QuizMasterModel.Quimestre" Width="1.5" PointX="3.75" PointY="10.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="QuizMasterModel.Respuestas" Width="1.5" PointX="10.5" PointY="4" IsExpanded="true" />
+        <EntityTypeShape EntityType="QuizMasterModel.RespuestasAlumnosCuestionarios" Width="1.5" PointX="12.75" PointY="4" IsExpanded="true" />
+        <EntityTypeShape EntityType="QuizMasterModel.Usuarios" Width="1.5" PointX="0.75" PointY="3.875" IsExpanded="true" />
+        <AssociationConnector Association="QuizMasterModel.FK_Alumnos_AlumnosGrupos" ManuallyRouted="false" />
+        <AssociationConnector Association="QuizMasterModel.FK_Alumnos_Cat_TipoDocumento" ManuallyRouted="false" />
+        <AssociationConnector Association="QuizMasterModel.FK_AsignacionCuestionario_Alumnos" ManuallyRouted="false" />
+        <AssociationConnector Association="QuizMasterModel.FK_AsignacionCuestionario_Cuestionarios" ManuallyRouted="false" />
+        <AssociationConnector Association="QuizMasterModel.FK_AsignacionCuestionario_Usuarios" ManuallyRouted="false" />
+        <AssociationConnector Association="QuizMasterModel.FK_RespuestasAlumnosCuestionarios_AsignacionCuestionario" ManuallyRouted="false" />
+        <AssociationConnector Association="QuizMasterModel.FK_Cuestionarios_Instrucciones" ManuallyRouted="false" />
+        <AssociationConnector Association="QuizMasterModel.FK_Cuestionarios_Materias" ManuallyRouted="false" />
+        <AssociationConnector Association="QuizMasterModel.FK_Cuestionarios_Quimestre" ManuallyRouted="false" />
+        <AssociationConnector Association="QuizMasterModel.FK_Cuestionarios_Usuarios" ManuallyRouted="false" />
+        <AssociationConnector Association="QuizMasterModel.FK_Preguntas_Cuestionarios" ManuallyRouted="false" />
+        <AssociationConnector Association="QuizMasterModel.FK_Respuestas_Preguntas" ManuallyRouted="false" />
+        <AssociationConnector Association="QuizMasterModel.FK_RespuestasAlumnosCuestionarios_Respuestas" ManuallyRouted="false" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

@@ -1,0 +1,78 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{EDD969E2-7527-41A5-A4E6-FE64A07A20C5}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>QuizMaster.Apli.Aplication</RootNamespace>
+    <AssemblyName>QuizMaster.Apli.Aplication</AssemblyName>
+    <TargetFrameworkVersion>v4.8</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <Deterministic>true</Deterministic>
+    <NuGetPackageImportStamp>
+    </NuGetPackageImportStamp>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Class1.cs" />
+    <Compile Include="EntityServices\AlumnosGruposServices.cs" />
+    <Compile Include="EntityServices\AlumnosServices.cs" />
+    <Compile Include="EntityServices\Cat_TipoDocumentoServices.cs" />
+    <Compile Include="EntityServices\CuestionariosServices.cs" />
+    <Compile Include="EntityServices\InstruccionesServices.cs" />
+    <Compile Include="EntityServices\MateriasServices.cs" />
+    <Compile Include="EntityServices\PreguntasServices.cs" />
+    <Compile Include="EntityServices\QuimestreServices.cs" />
+    <Compile Include="EntityServices\RespuestasServices.cs" />
+    <Compile Include="EntityServices\UsuariosServices.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\QuizMaster.Dominio.Model\QuizMaster.Dominio.Model.csproj">
+      <Project>{a4211598-17ee-4dd3-b8ce-9d9fc1130a31}</Project>
+      <Name>QuizMaster.Dominio.Model</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\QuizMaster.Dominio.Services\QuizMaster.Dominio.Services.csproj">
+      <Project>{81e0fa2f-5643-4ef2-b140-9bfefb9a8a36}</Project>
+      <Name>QuizMaster.Dominio.Services</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\QuizMaster.Infra.DataAcces\QuizMaster.Infra.DataAcces.csproj">
+      <Project>{a3ce62ae-76b4-457d-a54c-3dd79a80c623}</Project>
+      <Name>QuizMaster.Infra.DataAcces</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>

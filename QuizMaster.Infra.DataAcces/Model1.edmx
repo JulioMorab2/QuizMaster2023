@@ -1,0 +1,860 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+      <Schema Namespace="QuizMasterModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="Alumnos">
+          <Key>
+            <PropertyRef Name="IDAlumno" />
+          </Key>
+          <Property Name="IDAlumno" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Nombres" Type="nvarchar" MaxLength="100" />
+          <Property Name="Apellidos" Type="nvarchar" MaxLength="100" />
+          <Property Name="FechaNacimiento" Type="date" />
+          <Property Name="NumIdentificacion" Type="varchar" MaxLength="50" />
+          <Property Name="IDCat_TipoDocumento" Type="int" Nullable="false" />
+          <Property Name="IDAlumnoGrupo" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="AlumnosGrupos">
+          <Key>
+            <PropertyRef Name="IDAlumnoGrupo" />
+          </Key>
+          <Property Name="IDAlumnoGrupo" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Descripcion" Type="nvarchar" MaxLength="100" />
+        </EntityType>
+        <EntityType Name="AsignacionCuestionario">
+          <Key>
+            <PropertyRef Name="IDAsignacionCuestionario" />
+          </Key>
+          <Property Name="IDAsignacionCuestionario" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="IdCuestionario" Type="int" />
+          <Property Name="IDAlumno" Type="int" />
+          <Property Name="fecha" Type="datetime" />
+          <Property Name="NotaTotal" Type="decimal" Precision="6" Scale="2" />
+          <Property Name="IDUsuario" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Cat_TipoDocumento">
+          <Key>
+            <PropertyRef Name="IDCat_TipoDocumento" />
+          </Key>
+          <Property Name="IDCat_TipoDocumento" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Descripcion" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="Estado" Type="bit" />
+        </EntityType>
+        <EntityType Name="Cuestionarios">
+          <Key>
+            <PropertyRef Name="IdCuestionario" />
+          </Key>
+          <Property Name="IdCuestionario" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="IdInstrucciones" Type="int" Nullable="false" />
+          <Property Name="IndicadoresEvaluacion" Type="nvarchar(max)" />
+          <Property Name="Nivel" Type="nvarchar" MaxLength="200" />
+          <Property Name="Curso" Type="nvarchar" MaxLength="50" />
+          <Property Name="Area" Type="nvarchar" MaxLength="50" />
+          <Property Name="PorcentajeAprendizaje" Type="decimal" Precision="5" Scale="2" />
+          <Property Name="IDQuimestre" Type="int" Nullable="false" />
+          <Property Name="IDUsuario" Type="int" Nullable="false" />
+          <Property Name="IDMateria" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Instrucciones">
+          <Key>
+            <PropertyRef Name="IdInstrucciones" />
+          </Key>
+          <Property Name="IdInstrucciones" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Texto" Type="nvarchar(max)" />
+        </EntityType>
+        <EntityType Name="Materias">
+          <Key>
+            <PropertyRef Name="IDMateria" />
+          </Key>
+          <Property Name="IDMateria" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="NombreMateria" Type="nvarchar" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="Preguntas">
+          <Key>
+            <PropertyRef Name="IDPregunta" />
+          </Key>
+          <Property Name="IDPregunta" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Pregunta" Type="nvarchar(max)" />
+          <Property Name="fecha" Type="datetime" />
+          <Property Name="puntaje" Type="decimal" Precision="6" Scale="2" />
+          <Property Name="IdCuestionario" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Quimestre">
+          <Key>
+            <PropertyRef Name="IDQuimestre" />
+          </Key>
+          <Property Name="IDQuimestre" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="DescQuimestre" Type="nvarchar" MaxLength="100" />
+        </EntityType>
+        <EntityType Name="Respuestas">
+          <Key>
+            <PropertyRef Name="IDRespuesta" />
+          </Key>
+          <Property Name="IDRespuesta" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="IDPregunta" Type="int" />
+          <Property Name="Respuesta" Type="nvarchar" MaxLength="255" />
+          <Property Name="EsCorrecta" Type="bit" />
+        </EntityType>
+        <EntityType Name="RespuestasAlumnosCuestionarios">
+          <Key>
+            <PropertyRef Name="IDRespuestasAlumnosCuestionarios" />
+          </Key>
+          <Property Name="IDRespuestasAlumnosCuestionarios" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="IDRespuesta" Type="int" />
+          <Property Name="TextoRespuesta" Type="nvarchar(max)" />
+          <Property Name="IDAsignacionCuestionario" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Usuarios">
+          <Key>
+            <PropertyRef Name="IDUsuario" />
+          </Key>
+          <Property Name="IDUsuario" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="NombreUsuario" Type="nvarchar" MaxLength="50" />
+          <Property Name="Contraseña" Type="nvarchar" MaxLength="50" />
+          <Property Name="Rol" Type="nvarchar" MaxLength="50" />
+          <Property Name="esProfesor" Type="bit" />
+        </EntityType>
+        <Association Name="FK_Alumnos_AlumnosGrupos">
+          <End Role="AlumnosGrupos" Type="Self.AlumnosGrupos" Multiplicity="1" />
+          <End Role="Alumnos" Type="Self.Alumnos" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="AlumnosGrupos">
+              <PropertyRef Name="IDAlumnoGrupo" />
+            </Principal>
+            <Dependent Role="Alumnos">
+              <PropertyRef Name="IDAlumnoGrupo" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Alumnos_Cat_TipoDocumento">
+          <End Role="Cat_TipoDocumento" Type="Self.Cat_TipoDocumento" Multiplicity="1" />
+          <End Role="Alumnos" Type="Self.Alumnos" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Cat_TipoDocumento">
+              <PropertyRef Name="IDCat_TipoDocumento" />
+            </Principal>
+            <Dependent Role="Alumnos">
+              <PropertyRef Name="IDCat_TipoDocumento" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_AsignacionCuestionario_Alumnos">
+          <End Role="Alumnos" Type="Self.Alumnos" Multiplicity="0..1" />
+          <End Role="AsignacionCuestionario" Type="Self.AsignacionCuestionario" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Alumnos">
+              <PropertyRef Name="IDAlumno" />
+            </Principal>
+            <Dependent Role="AsignacionCuestionario">
+              <PropertyRef Name="IDAlumno" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_AsignacionCuestionario_Cuestionarios">
+          <End Role="Cuestionarios" Type="Self.Cuestionarios" Multiplicity="0..1" />
+          <End Role="AsignacionCuestionario" Type="Self.AsignacionCuestionario" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Cuestionarios">
+              <PropertyRef Name="IdCuestionario" />
+            </Principal>
+            <Dependent Role="AsignacionCuestionario">
+              <PropertyRef Name="IdCuestionario" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_AsignacionCuestionario_Usuarios">
+          <End Role="Usuarios" Type="Self.Usuarios" Multiplicity="1" />
+          <End Role="AsignacionCuestionario" Type="Self.AsignacionCuestionario" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Usuarios">
+              <PropertyRef Name="IDUsuario" />
+            </Principal>
+            <Dependent Role="AsignacionCuestionario">
+              <PropertyRef Name="IDUsuario" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Cuestionarios_Instrucciones">
+          <End Role="Instrucciones" Type="Self.Instrucciones" Multiplicity="1" />
+          <End Role="Cuestionarios" Type="Self.Cuestionarios" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Instrucciones">
+              <PropertyRef Name="IdInstrucciones" />
+            </Principal>
+            <Dependent Role="Cuestionarios">
+              <PropertyRef Name="IdInstrucciones" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Cuestionarios_Materias">
+          <End Role="Materias" Type="Self.Materias" Multiplicity="1" />
+          <End Role="Cuestionarios" Type="Self.Cuestionarios" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Materias">
+              <PropertyRef Name="IDMateria" />
+            </Principal>
+            <Dependent Role="Cuestionarios">
+              <PropertyRef Name="IDMateria" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Cuestionarios_Quimestre">
+          <End Role="Quimestre" Type="Self.Quimestre" Multiplicity="1" />
+          <End Role="Cuestionarios" Type="Self.Cuestionarios" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Quimestre">
+              <PropertyRef Name="IDQuimestre" />
+            </Principal>
+            <Dependent Role="Cuestionarios">
+              <PropertyRef Name="IDQuimestre" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Cuestionarios_Usuarios">
+          <End Role="Usuarios" Type="Self.Usuarios" Multiplicity="1" />
+          <End Role="Cuestionarios" Type="Self.Cuestionarios" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Usuarios">
+              <PropertyRef Name="IDUsuario" />
+            </Principal>
+            <Dependent Role="Cuestionarios">
+              <PropertyRef Name="IDUsuario" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Preguntas_Cuestionarios">
+          <End Role="Cuestionarios" Type="Self.Cuestionarios" Multiplicity="1" />
+          <End Role="Preguntas" Type="Self.Preguntas" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Cuestionarios">
+              <PropertyRef Name="IdCuestionario" />
+            </Principal>
+            <Dependent Role="Preguntas">
+              <PropertyRef Name="IdCuestionario" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Respuestas_Preguntas">
+          <End Role="Preguntas" Type="Self.Preguntas" Multiplicity="0..1" />
+          <End Role="Respuestas" Type="Self.Respuestas" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Preguntas">
+              <PropertyRef Name="IDPregunta" />
+            </Principal>
+            <Dependent Role="Respuestas">
+              <PropertyRef Name="IDPregunta" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_RespuestasAlumnosCuestionarios_AsignacionCuestionario">
+          <End Role="AsignacionCuestionario" Type="Self.AsignacionCuestionario" Multiplicity="1" />
+          <End Role="RespuestasAlumnosCuestionarios" Type="Self.RespuestasAlumnosCuestionarios" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="AsignacionCuestionario">
+              <PropertyRef Name="IDAsignacionCuestionario" />
+            </Principal>
+            <Dependent Role="RespuestasAlumnosCuestionarios">
+              <PropertyRef Name="IDAsignacionCuestionario" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_RespuestasAlumnosCuestionarios_Respuestas">
+          <End Role="Respuestas" Type="Self.Respuestas" Multiplicity="0..1" />
+          <End Role="RespuestasAlumnosCuestionarios" Type="Self.RespuestasAlumnosCuestionarios" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Respuestas">
+              <PropertyRef Name="IDRespuesta" />
+            </Principal>
+            <Dependent Role="RespuestasAlumnosCuestionarios">
+              <PropertyRef Name="IDRespuesta" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityContainer Name="QuizMasterModelStoreContainer">
+          <EntitySet Name="Alumnos" EntityType="Self.Alumnos" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="AlumnosGrupos" EntityType="Self.AlumnosGrupos" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="AsignacionCuestionario" EntityType="Self.AsignacionCuestionario" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Cat_TipoDocumento" EntityType="Self.Cat_TipoDocumento" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Cuestionarios" EntityType="Self.Cuestionarios" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Instrucciones" EntityType="Self.Instrucciones" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Materias" EntityType="Self.Materias" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Preguntas" EntityType="Self.Preguntas" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Quimestre" EntityType="Self.Quimestre" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Respuestas" EntityType="Self.Respuestas" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="RespuestasAlumnosCuestionarios" EntityType="Self.RespuestasAlumnosCuestionarios" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Usuarios" EntityType="Self.Usuarios" Schema="dbo" store:Type="Tables" />
+          <AssociationSet Name="FK_Alumnos_AlumnosGrupos" Association="Self.FK_Alumnos_AlumnosGrupos">
+            <End Role="AlumnosGrupos" EntitySet="AlumnosGrupos" />
+            <End Role="Alumnos" EntitySet="Alumnos" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Alumnos_Cat_TipoDocumento" Association="Self.FK_Alumnos_Cat_TipoDocumento">
+            <End Role="Cat_TipoDocumento" EntitySet="Cat_TipoDocumento" />
+            <End Role="Alumnos" EntitySet="Alumnos" />
+          </AssociationSet>
+          <AssociationSet Name="FK_AsignacionCuestionario_Alumnos" Association="Self.FK_AsignacionCuestionario_Alumnos">
+            <End Role="Alumnos" EntitySet="Alumnos" />
+            <End Role="AsignacionCuestionario" EntitySet="AsignacionCuestionario" />
+          </AssociationSet>
+          <AssociationSet Name="FK_AsignacionCuestionario_Cuestionarios" Association="Self.FK_AsignacionCuestionario_Cuestionarios">
+            <End Role="Cuestionarios" EntitySet="Cuestionarios" />
+            <End Role="AsignacionCuestionario" EntitySet="AsignacionCuestionario" />
+          </AssociationSet>
+          <AssociationSet Name="FK_AsignacionCuestionario_Usuarios" Association="Self.FK_AsignacionCuestionario_Usuarios">
+            <End Role="Usuarios" EntitySet="Usuarios" />
+            <End Role="AsignacionCuestionario" EntitySet="AsignacionCuestionario" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Cuestionarios_Instrucciones" Association="Self.FK_Cuestionarios_Instrucciones">
+            <End Role="Instrucciones" EntitySet="Instrucciones" />
+            <End Role="Cuestionarios" EntitySet="Cuestionarios" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Cuestionarios_Materias" Association="Self.FK_Cuestionarios_Materias">
+            <End Role="Materias" EntitySet="Materias" />
+            <End Role="Cuestionarios" EntitySet="Cuestionarios" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Cuestionarios_Quimestre" Association="Self.FK_Cuestionarios_Quimestre">
+            <End Role="Quimestre" EntitySet="Quimestre" />
+            <End Role="Cuestionarios" EntitySet="Cuestionarios" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Cuestionarios_Usuarios" Association="Self.FK_Cuestionarios_Usuarios">
+            <End Role="Usuarios" EntitySet="Usuarios" />
+            <End Role="Cuestionarios" EntitySet="Cuestionarios" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Preguntas_Cuestionarios" Association="Self.FK_Preguntas_Cuestionarios">
+            <End Role="Cuestionarios" EntitySet="Cuestionarios" />
+            <End Role="Preguntas" EntitySet="Preguntas" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Respuestas_Preguntas" Association="Self.FK_Respuestas_Preguntas">
+            <End Role="Preguntas" EntitySet="Preguntas" />
+            <End Role="Respuestas" EntitySet="Respuestas" />
+          </AssociationSet>
+          <AssociationSet Name="FK_RespuestasAlumnosCuestionarios_AsignacionCuestionario" Association="Self.FK_RespuestasAlumnosCuestionarios_AsignacionCuestionario">
+            <End Role="AsignacionCuestionario" EntitySet="AsignacionCuestionario" />
+            <End Role="RespuestasAlumnosCuestionarios" EntitySet="RespuestasAlumnosCuestionarios" />
+          </AssociationSet>
+          <AssociationSet Name="FK_RespuestasAlumnosCuestionarios_Respuestas" Association="Self.FK_RespuestasAlumnosCuestionarios_Respuestas">
+            <End Role="Respuestas" EntitySet="Respuestas" />
+            <End Role="RespuestasAlumnosCuestionarios" EntitySet="RespuestasAlumnosCuestionarios" />
+          </AssociationSet>
+        </EntityContainer>
+      </Schema>
+    </edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="QuizMasterModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityType Name="Alumnos">
+          <Key>
+            <PropertyRef Name="IDAlumno" />
+          </Key>
+          <Property Name="IDAlumno" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Nombres" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="Apellidos" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="FechaNacimiento" Type="DateTime" Precision="0" />
+          <Property Name="NumIdentificacion" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="IDCat_TipoDocumento" Type="Int32" Nullable="false" />
+          <Property Name="IDAlumnoGrupo" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="AlumnosGrupos" Relationship="Self.FK_Alumnos_AlumnosGrupos" FromRole="Alumnos" ToRole="AlumnosGrupos" />
+          <NavigationProperty Name="Cat_TipoDocumento" Relationship="Self.FK_Alumnos_Cat_TipoDocumento" FromRole="Alumnos" ToRole="Cat_TipoDocumento" />
+          <NavigationProperty Name="AsignacionCuestionario" Relationship="Self.FK_AsignacionCuestionario_Alumnos" FromRole="Alumnos" ToRole="AsignacionCuestionario" />
+        </EntityType>
+        <EntityType Name="AlumnosGrupos">
+          <Key>
+            <PropertyRef Name="IDAlumnoGrupo" />
+          </Key>
+          <Property Name="IDAlumnoGrupo" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Descripcion" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="Alumnos" Relationship="Self.FK_Alumnos_AlumnosGrupos" FromRole="AlumnosGrupos" ToRole="Alumnos" />
+        </EntityType>
+        <EntityType Name="AsignacionCuestionario">
+          <Key>
+            <PropertyRef Name="IDAsignacionCuestionario" />
+          </Key>
+          <Property Name="IDAsignacionCuestionario" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="IdCuestionario" Type="Int32" />
+          <Property Name="IDAlumno" Type="Int32" />
+          <Property Name="fecha" Type="DateTime" Precision="3" />
+          <Property Name="NotaTotal" Type="Decimal" Precision="6" Scale="2" />
+          <Property Name="IDUsuario" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="Alumnos" Relationship="Self.FK_AsignacionCuestionario_Alumnos" FromRole="AsignacionCuestionario" ToRole="Alumnos" />
+          <NavigationProperty Name="Cuestionarios" Relationship="Self.FK_AsignacionCuestionario_Cuestionarios" FromRole="AsignacionCuestionario" ToRole="Cuestionarios" />
+          <NavigationProperty Name="Usuarios" Relationship="Self.FK_AsignacionCuestionario_Usuarios" FromRole="AsignacionCuestionario" ToRole="Usuarios" />
+          <NavigationProperty Name="RespuestasAlumnosCuestionarios" Relationship="Self.FK_RespuestasAlumnosCuestionarios_AsignacionCuestionario" FromRole="AsignacionCuestionario" ToRole="RespuestasAlumnosCuestionarios" />
+        </EntityType>
+        <EntityType Name="Cat_TipoDocumento">
+          <Key>
+            <PropertyRef Name="IDCat_TipoDocumento" />
+          </Key>
+          <Property Name="IDCat_TipoDocumento" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Descripcion" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="Estado" Type="Boolean" />
+          <NavigationProperty Name="Alumnos" Relationship="Self.FK_Alumnos_Cat_TipoDocumento" FromRole="Cat_TipoDocumento" ToRole="Alumnos" />
+        </EntityType>
+        <EntityType Name="Cuestionarios">
+          <Key>
+            <PropertyRef Name="IdCuestionario" />
+          </Key>
+          <Property Name="IdCuestionario" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="IdInstrucciones" Type="Int32" Nullable="false" />
+          <Property Name="IndicadoresEvaluacion" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="Nivel" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+          <Property Name="Curso" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Area" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="PorcentajeAprendizaje" Type="Decimal" Precision="5" Scale="2" />
+          <Property Name="IDQuimestre" Type="Int32" Nullable="false" />
+          <Property Name="IDUsuario" Type="Int32" Nullable="false" />
+          <Property Name="IDMateria" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="AsignacionCuestionario" Relationship="Self.FK_AsignacionCuestionario_Cuestionarios" FromRole="Cuestionarios" ToRole="AsignacionCuestionario" />
+          <NavigationProperty Name="Instrucciones" Relationship="Self.FK_Cuestionarios_Instrucciones" FromRole="Cuestionarios" ToRole="Instrucciones" />
+          <NavigationProperty Name="Materias" Relationship="Self.FK_Cuestionarios_Materias" FromRole="Cuestionarios" ToRole="Materias" />
+          <NavigationProperty Name="Quimestre" Relationship="Self.FK_Cuestionarios_Quimestre" FromRole="Cuestionarios" ToRole="Quimestre" />
+          <NavigationProperty Name="Usuarios" Relationship="Self.FK_Cuestionarios_Usuarios" FromRole="Cuestionarios" ToRole="Usuarios" />
+          <NavigationProperty Name="Preguntas" Relationship="Self.FK_Preguntas_Cuestionarios" FromRole="Cuestionarios" ToRole="Preguntas" />
+        </EntityType>
+        <EntityType Name="Instrucciones">
+          <Key>
+            <PropertyRef Name="IdInstrucciones" />
+          </Key>
+          <Property Name="IdInstrucciones" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Texto" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="Cuestionarios" Relationship="Self.FK_Cuestionarios_Instrucciones" FromRole="Instrucciones" ToRole="Cuestionarios" />
+        </EntityType>
+        <EntityType Name="Materias">
+          <Key>
+            <PropertyRef Name="IDMateria" />
+          </Key>
+          <Property Name="IDMateria" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="NombreMateria" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="Cuestionarios" Relationship="Self.FK_Cuestionarios_Materias" FromRole="Materias" ToRole="Cuestionarios" />
+        </EntityType>
+        <EntityType Name="Preguntas">
+          <Key>
+            <PropertyRef Name="IDPregunta" />
+          </Key>
+          <Property Name="IDPregunta" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Pregunta" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="fecha" Type="DateTime" Precision="3" />
+          <Property Name="puntaje" Type="Decimal" Precision="6" Scale="2" />
+          <Property Name="IdCuestionario" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="Cuestionarios" Relationship="Self.FK_Preguntas_Cuestionarios" FromRole="Preguntas" ToRole="Cuestionarios" />
+          <NavigationProperty Name="Respuestas" Relationship="Self.FK_Respuestas_Preguntas" FromRole="Preguntas" ToRole="Respuestas" />
+        </EntityType>
+        <EntityType Name="Quimestre">
+          <Key>
+            <PropertyRef Name="IDQuimestre" />
+          </Key>
+          <Property Name="IDQuimestre" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="DescQuimestre" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="Cuestionarios" Relationship="Self.FK_Cuestionarios_Quimestre" FromRole="Quimestre" ToRole="Cuestionarios" />
+        </EntityType>
+        <EntityType Name="Respuestas">
+          <Key>
+            <PropertyRef Name="IDRespuesta" />
+          </Key>
+          <Property Name="IDRespuesta" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="IDPregunta" Type="Int32" />
+          <Property Name="Respuesta" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="EsCorrecta" Type="Boolean" />
+          <NavigationProperty Name="Preguntas" Relationship="Self.FK_Respuestas_Preguntas" FromRole="Respuestas" ToRole="Preguntas" />
+          <NavigationProperty Name="RespuestasAlumnosCuestionarios" Relationship="Self.FK_RespuestasAlumnosCuestionarios_Respuestas" FromRole="Respuestas" ToRole="RespuestasAlumnosCuestionarios" />
+        </EntityType>
+        <EntityType Name="RespuestasAlumnosCuestionarios">
+          <Key>
+            <PropertyRef Name="IDRespuestasAlumnosCuestionarios" />
+          </Key>
+          <Property Name="IDRespuestasAlumnosCuestionarios" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="IDRespuesta" Type="Int32" />
+          <Property Name="TextoRespuesta" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="IDAsignacionCuestionario" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="AsignacionCuestionario" Relationship="Self.FK_RespuestasAlumnosCuestionarios_AsignacionCuestionario" FromRole="RespuestasAlumnosCuestionarios" ToRole="AsignacionCuestionario" />
+          <NavigationProperty Name="Respuestas" Relationship="Self.FK_RespuestasAlumnosCuestionarios_Respuestas" FromRole="RespuestasAlumnosCuestionarios" ToRole="Respuestas" />
+        </EntityType>
+        <EntityType Name="Usuarios">
+          <Key>
+            <PropertyRef Name="IDUsuario" />
+          </Key>
+          <Property Name="IDUsuario" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="NombreUsuario" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Contraseña" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Rol" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="esProfesor" Type="Boolean" />
+          <NavigationProperty Name="AsignacionCuestionario" Relationship="Self.FK_AsignacionCuestionario_Usuarios" FromRole="Usuarios" ToRole="AsignacionCuestionario" />
+          <NavigationProperty Name="Cuestionarios" Relationship="Self.FK_Cuestionarios_Usuarios" FromRole="Usuarios" ToRole="Cuestionarios" />
+        </EntityType>
+        <Association Name="FK_Alumnos_AlumnosGrupos">
+          <End Role="AlumnosGrupos" Type="Self.AlumnosGrupos" Multiplicity="1" />
+          <End Role="Alumnos" Type="Self.Alumnos" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="AlumnosGrupos">
+              <PropertyRef Name="IDAlumnoGrupo" />
+            </Principal>
+            <Dependent Role="Alumnos">
+              <PropertyRef Name="IDAlumnoGrupo" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Alumnos_Cat_TipoDocumento">
+          <End Role="Cat_TipoDocumento" Type="Self.Cat_TipoDocumento" Multiplicity="1" />
+          <End Role="Alumnos" Type="Self.Alumnos" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Cat_TipoDocumento">
+              <PropertyRef Name="IDCat_TipoDocumento" />
+            </Principal>
+            <Dependent Role="Alumnos">
+              <PropertyRef Name="IDCat_TipoDocumento" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_AsignacionCuestionario_Alumnos">
+          <End Role="Alumnos" Type="Self.Alumnos" Multiplicity="0..1" />
+          <End Role="AsignacionCuestionario" Type="Self.AsignacionCuestionario" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Alumnos">
+              <PropertyRef Name="IDAlumno" />
+            </Principal>
+            <Dependent Role="AsignacionCuestionario">
+              <PropertyRef Name="IDAlumno" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_AsignacionCuestionario_Cuestionarios">
+          <End Role="Cuestionarios" Type="Self.Cuestionarios" Multiplicity="0..1" />
+          <End Role="AsignacionCuestionario" Type="Self.AsignacionCuestionario" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Cuestionarios">
+              <PropertyRef Name="IdCuestionario" />
+            </Principal>
+            <Dependent Role="AsignacionCuestionario">
+              <PropertyRef Name="IdCuestionario" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_AsignacionCuestionario_Usuarios">
+          <End Role="Usuarios" Type="Self.Usuarios" Multiplicity="1" />
+          <End Role="AsignacionCuestionario" Type="Self.AsignacionCuestionario" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Usuarios">
+              <PropertyRef Name="IDUsuario" />
+            </Principal>
+            <Dependent Role="AsignacionCuestionario">
+              <PropertyRef Name="IDUsuario" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_RespuestasAlumnosCuestionarios_AsignacionCuestionario">
+          <End Role="AsignacionCuestionario" Type="Self.AsignacionCuestionario" Multiplicity="1" />
+          <End Role="RespuestasAlumnosCuestionarios" Type="Self.RespuestasAlumnosCuestionarios" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="AsignacionCuestionario">
+              <PropertyRef Name="IDAsignacionCuestionario" />
+            </Principal>
+            <Dependent Role="RespuestasAlumnosCuestionarios">
+              <PropertyRef Name="IDAsignacionCuestionario" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Cuestionarios_Instrucciones">
+          <End Role="Instrucciones" Type="Self.Instrucciones" Multiplicity="1" />
+          <End Role="Cuestionarios" Type="Self.Cuestionarios" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Instrucciones">
+              <PropertyRef Name="IdInstrucciones" />
+            </Principal>
+            <Dependent Role="Cuestionarios">
+              <PropertyRef Name="IdInstrucciones" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Cuestionarios_Materias">
+          <End Role="Materias" Type="Self.Materias" Multiplicity="1" />
+          <End Role="Cuestionarios" Type="Self.Cuestionarios" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Materias">
+              <PropertyRef Name="IDMateria" />
+            </Principal>
+            <Dependent Role="Cuestionarios">
+              <PropertyRef Name="IDMateria" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Cuestionarios_Quimestre">
+          <End Role="Quimestre" Type="Self.Quimestre" Multiplicity="1" />
+          <End Role="Cuestionarios" Type="Self.Cuestionarios" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Quimestre">
+              <PropertyRef Name="IDQuimestre" />
+            </Principal>
+            <Dependent Role="Cuestionarios">
+              <PropertyRef Name="IDQuimestre" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Cuestionarios_Usuarios">
+          <End Role="Usuarios" Type="Self.Usuarios" Multiplicity="1" />
+          <End Role="Cuestionarios" Type="Self.Cuestionarios" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Usuarios">
+              <PropertyRef Name="IDUsuario" />
+            </Principal>
+            <Dependent Role="Cuestionarios">
+              <PropertyRef Name="IDUsuario" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Preguntas_Cuestionarios">
+          <End Role="Cuestionarios" Type="Self.Cuestionarios" Multiplicity="1" />
+          <End Role="Preguntas" Type="Self.Preguntas" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Cuestionarios">
+              <PropertyRef Name="IdCuestionario" />
+            </Principal>
+            <Dependent Role="Preguntas">
+              <PropertyRef Name="IdCuestionario" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Respuestas_Preguntas">
+          <End Role="Preguntas" Type="Self.Preguntas" Multiplicity="0..1" />
+          <End Role="Respuestas" Type="Self.Respuestas" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Preguntas">
+              <PropertyRef Name="IDPregunta" />
+            </Principal>
+            <Dependent Role="Respuestas">
+              <PropertyRef Name="IDPregunta" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_RespuestasAlumnosCuestionarios_Respuestas">
+          <End Role="Respuestas" Type="Self.Respuestas" Multiplicity="0..1" />
+          <End Role="RespuestasAlumnosCuestionarios" Type="Self.RespuestasAlumnosCuestionarios" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Respuestas">
+              <PropertyRef Name="IDRespuesta" />
+            </Principal>
+            <Dependent Role="RespuestasAlumnosCuestionarios">
+              <PropertyRef Name="IDRespuesta" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityContainer Name="QuizMasterEntities" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="Alumnos" EntityType="Self.Alumnos" />
+          <EntitySet Name="AlumnosGrupos" EntityType="Self.AlumnosGrupos" />
+          <EntitySet Name="AsignacionCuestionario" EntityType="Self.AsignacionCuestionario" />
+          <EntitySet Name="Cat_TipoDocumento" EntityType="Self.Cat_TipoDocumento" />
+          <EntitySet Name="Cuestionarios" EntityType="Self.Cuestionarios" />
+          <EntitySet Name="Instrucciones" EntityType="Self.Instrucciones" />
+          <EntitySet Name="Materias" EntityType="Self.Materias" />
+          <EntitySet Name="Preguntas" EntityType="Self.Preguntas" />
+          <EntitySet Name="Quimestre" EntityType="Self.Quimestre" />
+          <EntitySet Name="Respuestas" EntityType="Self.Respuestas" />
+          <EntitySet Name="RespuestasAlumnosCuestionarios" EntityType="Self.RespuestasAlumnosCuestionarios" />
+          <EntitySet Name="Usuarios" EntityType="Self.Usuarios" />
+          <AssociationSet Name="FK_Alumnos_AlumnosGrupos" Association="Self.FK_Alumnos_AlumnosGrupos">
+            <End Role="AlumnosGrupos" EntitySet="AlumnosGrupos" />
+            <End Role="Alumnos" EntitySet="Alumnos" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Alumnos_Cat_TipoDocumento" Association="Self.FK_Alumnos_Cat_TipoDocumento">
+            <End Role="Cat_TipoDocumento" EntitySet="Cat_TipoDocumento" />
+            <End Role="Alumnos" EntitySet="Alumnos" />
+          </AssociationSet>
+          <AssociationSet Name="FK_AsignacionCuestionario_Alumnos" Association="Self.FK_AsignacionCuestionario_Alumnos">
+            <End Role="Alumnos" EntitySet="Alumnos" />
+            <End Role="AsignacionCuestionario" EntitySet="AsignacionCuestionario" />
+          </AssociationSet>
+          <AssociationSet Name="FK_AsignacionCuestionario_Cuestionarios" Association="Self.FK_AsignacionCuestionario_Cuestionarios">
+            <End Role="Cuestionarios" EntitySet="Cuestionarios" />
+            <End Role="AsignacionCuestionario" EntitySet="AsignacionCuestionario" />
+          </AssociationSet>
+          <AssociationSet Name="FK_AsignacionCuestionario_Usuarios" Association="Self.FK_AsignacionCuestionario_Usuarios">
+            <End Role="Usuarios" EntitySet="Usuarios" />
+            <End Role="AsignacionCuestionario" EntitySet="AsignacionCuestionario" />
+          </AssociationSet>
+          <AssociationSet Name="FK_RespuestasAlumnosCuestionarios_AsignacionCuestionario" Association="Self.FK_RespuestasAlumnosCuestionarios_AsignacionCuestionario">
+            <End Role="AsignacionCuestionario" EntitySet="AsignacionCuestionario" />
+            <End Role="RespuestasAlumnosCuestionarios" EntitySet="RespuestasAlumnosCuestionarios" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Cuestionarios_Instrucciones" Association="Self.FK_Cuestionarios_Instrucciones">
+            <End Role="Instrucciones" EntitySet="Instrucciones" />
+            <End Role="Cuestionarios" EntitySet="Cuestionarios" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Cuestionarios_Materias" Association="Self.FK_Cuestionarios_Materias">
+            <End Role="Materias" EntitySet="Materias" />
+            <End Role="Cuestionarios" EntitySet="Cuestionarios" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Cuestionarios_Quimestre" Association="Self.FK_Cuestionarios_Quimestre">
+            <End Role="Quimestre" EntitySet="Quimestre" />
+            <End Role="Cuestionarios" EntitySet="Cuestionarios" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Cuestionarios_Usuarios" Association="Self.FK_Cuestionarios_Usuarios">
+            <End Role="Usuarios" EntitySet="Usuarios" />
+            <End Role="Cuestionarios" EntitySet="Cuestionarios" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Preguntas_Cuestionarios" Association="Self.FK_Preguntas_Cuestionarios">
+            <End Role="Cuestionarios" EntitySet="Cuestionarios" />
+            <End Role="Preguntas" EntitySet="Preguntas" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Respuestas_Preguntas" Association="Self.FK_Respuestas_Preguntas">
+            <End Role="Preguntas" EntitySet="Preguntas" />
+            <End Role="Respuestas" EntitySet="Respuestas" />
+          </AssociationSet>
+          <AssociationSet Name="FK_RespuestasAlumnosCuestionarios_Respuestas" Association="Self.FK_RespuestasAlumnosCuestionarios_Respuestas">
+            <End Role="Respuestas" EntitySet="Respuestas" />
+            <End Role="RespuestasAlumnosCuestionarios" EntitySet="RespuestasAlumnosCuestionarios" />
+          </AssociationSet>
+        </EntityContainer>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="QuizMasterModelStoreContainer" CdmEntityContainer="QuizMasterEntities">
+          <EntitySetMapping Name="Alumnos">
+            <EntityTypeMapping TypeName="QuizMasterModel.Alumnos">
+              <MappingFragment StoreEntitySet="Alumnos">
+                <ScalarProperty Name="IDAlumno" ColumnName="IDAlumno" />
+                <ScalarProperty Name="Nombres" ColumnName="Nombres" />
+                <ScalarProperty Name="Apellidos" ColumnName="Apellidos" />
+                <ScalarProperty Name="FechaNacimiento" ColumnName="FechaNacimiento" />
+                <ScalarProperty Name="NumIdentificacion" ColumnName="NumIdentificacion" />
+                <ScalarProperty Name="IDCat_TipoDocumento" ColumnName="IDCat_TipoDocumento" />
+                <ScalarProperty Name="IDAlumnoGrupo" ColumnName="IDAlumnoGrupo" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="AlumnosGrupos">
+            <EntityTypeMapping TypeName="QuizMasterModel.AlumnosGrupos">
+              <MappingFragment StoreEntitySet="AlumnosGrupos">
+                <ScalarProperty Name="IDAlumnoGrupo" ColumnName="IDAlumnoGrupo" />
+                <ScalarProperty Name="Descripcion" ColumnName="Descripcion" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="AsignacionCuestionario">
+            <EntityTypeMapping TypeName="QuizMasterModel.AsignacionCuestionario">
+              <MappingFragment StoreEntitySet="AsignacionCuestionario">
+                <ScalarProperty Name="IDAsignacionCuestionario" ColumnName="IDAsignacionCuestionario" />
+                <ScalarProperty Name="IdCuestionario" ColumnName="IdCuestionario" />
+                <ScalarProperty Name="IDAlumno" ColumnName="IDAlumno" />
+                <ScalarProperty Name="fecha" ColumnName="fecha" />
+                <ScalarProperty Name="NotaTotal" ColumnName="NotaTotal" />
+                <ScalarProperty Name="IDUsuario" ColumnName="IDUsuario" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Cat_TipoDocumento">
+            <EntityTypeMapping TypeName="QuizMasterModel.Cat_TipoDocumento">
+              <MappingFragment StoreEntitySet="Cat_TipoDocumento">
+                <ScalarProperty Name="IDCat_TipoDocumento" ColumnName="IDCat_TipoDocumento" />
+                <ScalarProperty Name="Descripcion" ColumnName="Descripcion" />
+                <ScalarProperty Name="Estado" ColumnName="Estado" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Cuestionarios">
+            <EntityTypeMapping TypeName="QuizMasterModel.Cuestionarios">
+              <MappingFragment StoreEntitySet="Cuestionarios">
+                <ScalarProperty Name="IdCuestionario" ColumnName="IdCuestionario" />
+                <ScalarProperty Name="IdInstrucciones" ColumnName="IdInstrucciones" />
+                <ScalarProperty Name="IndicadoresEvaluacion" ColumnName="IndicadoresEvaluacion" />
+                <ScalarProperty Name="Nivel" ColumnName="Nivel" />
+                <ScalarProperty Name="Curso" ColumnName="Curso" />
+                <ScalarProperty Name="Area" ColumnName="Area" />
+                <ScalarProperty Name="PorcentajeAprendizaje" ColumnName="PorcentajeAprendizaje" />
+                <ScalarProperty Name="IDQuimestre" ColumnName="IDQuimestre" />
+                <ScalarProperty Name="IDUsuario" ColumnName="IDUsuario" />
+                <ScalarProperty Name="IDMateria" ColumnName="IDMateria" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Instrucciones">
+            <EntityTypeMapping TypeName="QuizMasterModel.Instrucciones">
+              <MappingFragment StoreEntitySet="Instrucciones">
+                <ScalarProperty Name="IdInstrucciones" ColumnName="IdInstrucciones" />
+                <ScalarProperty Name="Texto" ColumnName="Texto" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Materias">
+            <EntityTypeMapping TypeName="QuizMasterModel.Materias">
+              <MappingFragment StoreEntitySet="Materias">
+                <ScalarProperty Name="IDMateria" ColumnName="IDMateria" />
+                <ScalarProperty Name="NombreMateria" ColumnName="NombreMateria" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Preguntas">
+            <EntityTypeMapping TypeName="QuizMasterModel.Preguntas">
+              <MappingFragment StoreEntitySet="Preguntas">
+                <ScalarProperty Name="IDPregunta" ColumnName="IDPregunta" />
+                <ScalarProperty Name="Pregunta" ColumnName="Pregunta" />
+                <ScalarProperty Name="fecha" ColumnName="fecha" />
+                <ScalarProperty Name="puntaje" ColumnName="puntaje" />
+                <ScalarProperty Name="IdCuestionario" ColumnName="IdCuestionario" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Quimestre">
+            <EntityTypeMapping TypeName="QuizMasterModel.Quimestre">
+              <MappingFragment StoreEntitySet="Quimestre">
+                <ScalarProperty Name="IDQuimestre" ColumnName="IDQuimestre" />
+                <ScalarProperty Name="DescQuimestre" ColumnName="DescQuimestre" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Respuestas">
+            <EntityTypeMapping TypeName="QuizMasterModel.Respuestas">
+              <MappingFragment StoreEntitySet="Respuestas">
+                <ScalarProperty Name="IDRespuesta" ColumnName="IDRespuesta" />
+                <ScalarProperty Name="IDPregunta" ColumnName="IDPregunta" />
+                <ScalarProperty Name="Respuesta" ColumnName="Respuesta" />
+                <ScalarProperty Name="EsCorrecta" ColumnName="EsCorrecta" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="RespuestasAlumnosCuestionarios">
+            <EntityTypeMapping TypeName="QuizMasterModel.RespuestasAlumnosCuestionarios">
+              <MappingFragment StoreEntitySet="RespuestasAlumnosCuestionarios">
+                <ScalarProperty Name="IDRespuestasAlumnosCuestionarios" ColumnName="IDRespuestasAlumnosCuestionarios" />
+                <ScalarProperty Name="IDRespuesta" ColumnName="IDRespuesta" />
+                <ScalarProperty Name="TextoRespuesta" ColumnName="TextoRespuesta" />
+                <ScalarProperty Name="IDAsignacionCuestionario" ColumnName="IDAsignacionCuestionario" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Usuarios">
+            <EntityTypeMapping TypeName="QuizMasterModel.Usuarios">
+              <MappingFragment StoreEntitySet="Usuarios">
+                <ScalarProperty Name="IDUsuario" ColumnName="IDUsuario" />
+                <ScalarProperty Name="NombreUsuario" ColumnName="NombreUsuario" />
+                <ScalarProperty Name="Contraseña" ColumnName="Contraseña" />
+                <ScalarProperty Name="Rol" ColumnName="Rol" />
+                <ScalarProperty Name="esProfesor" ColumnName="esProfesor" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="false" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="false" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>
