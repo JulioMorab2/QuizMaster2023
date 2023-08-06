@@ -51,3 +51,40 @@ INSERT INTO [dbo].[AlumnosGrupos]
            ([Descripcion])
      VALUES
            ('GRUPO 2')
+
+		   
+
+INSERT INTO [dbo].[Cat_TipoDocumento]
+           ([Descripcion]
+           ,[Estado])
+     VALUES
+           ('Cedula'
+           ,1)
+
+		   
+INSERT INTO [dbo].[Cat_TipoDocumento]
+           ([Descripcion]
+           ,[Estado])
+     VALUES
+           ('RUC'
+           ,1)
+
+		   
+		   
+INSERT INTO [dbo].[Cat_TipoDocumento]
+           ([Descripcion]
+           ,[Estado])
+     VALUES
+           ('Refugiado'
+           ,1)
+GO
+
+
+select * from Cat_TipoDocumento
+
+select * from Alumnos
+
+select * from AlumnosGrupos
+
+
+select * from Usuarios
