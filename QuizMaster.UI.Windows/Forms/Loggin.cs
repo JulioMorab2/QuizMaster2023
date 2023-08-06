@@ -14,8 +14,9 @@ namespace QuizMaster.UI.Windows.Forms
 {
     public partial class Loggin : MetroFramework.Forms.MetroForm
     {
-            public UsuariosViewModel viewModelUsuarios;
+        public UsuariosViewModel viewModelUsuarios;
         public UsuariosController controllerUsuarios;
+        MDIQuizMaster childFormPrincipal = new MDIQuizMaster();
         public Loggin()
         {
             InitializeComponent();
@@ -41,10 +42,10 @@ namespace QuizMaster.UI.Windows.Forms
 
                 //MessageBox.Show("Ususario activo");
                
-                MDIQuizMaster childFormPrincipal = new MDIQuizMaster();
+               
                 //childFormCategoria.MdiParent = this;
                 childFormPrincipal.Show();
-                this.Close();
+                //this.Close();
 
 
 
