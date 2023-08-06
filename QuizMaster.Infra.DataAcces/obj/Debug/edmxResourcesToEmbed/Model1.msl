@@ -1,6 +1,6 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
-  <EntityContainerMapping StorageEntityContainer="QuizMasterModelStoreContainer" CdmEntityContainer="QuizMasterEntities">
+  <EntityContainerMapping StorageEntityContainer="QuizMasterModelStoreContainer" CdmEntityContainer="QuizMasterEntities1">
     <EntitySetMapping Name="Alumnos">
       <EntityTypeMapping TypeName="QuizMasterModel.Alumnos">
         <MappingFragment StoreEntitySet="Alumnos">
@@ -52,7 +52,6 @@
           <ScalarProperty Name="Nivel" ColumnName="Nivel" />
           <ScalarProperty Name="Curso" ColumnName="Curso" />
           <ScalarProperty Name="Area" ColumnName="Area" />
-          <ScalarProperty Name="PorcentajeAprendizaje" ColumnName="PorcentajeAprendizaje" />
           <ScalarProperty Name="IDQuimestre" ColumnName="IDQuimestre" />
           <ScalarProperty Name="IDUsuario" ColumnName="IDUsuario" />
           <ScalarProperty Name="IDMateria" ColumnName="IDMateria" />
@@ -101,16 +100,6 @@
           <ScalarProperty Name="IDPregunta" ColumnName="IDPregunta" />
           <ScalarProperty Name="Respuesta" ColumnName="Respuesta" />
           <ScalarProperty Name="EsCorrecta" ColumnName="EsCorrecta" />
-        </MappingFragment>
-      </EntityTypeMapping>
-    </EntitySetMapping>
-    <EntitySetMapping Name="RespuestasAlumnosCuestionarios">
-      <EntityTypeMapping TypeName="QuizMasterModel.RespuestasAlumnosCuestionarios">
-        <MappingFragment StoreEntitySet="RespuestasAlumnosCuestionarios">
-          <ScalarProperty Name="IDRespuestasAlumnosCuestionarios" ColumnName="IDRespuestasAlumnosCuestionarios" />
-          <ScalarProperty Name="IDRespuesta" ColumnName="IDRespuesta" />
-          <ScalarProperty Name="TextoRespuesta" ColumnName="TextoRespuesta" />
-          <ScalarProperty Name="IDAsignacionCuestionario" ColumnName="IDAsignacionCuestionario" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>

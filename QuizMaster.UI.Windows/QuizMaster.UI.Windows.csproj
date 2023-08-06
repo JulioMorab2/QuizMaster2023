@@ -71,8 +71,6 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="ApplicationController\AlumnosController.cs" />
-    <Compile Include="ApplicationController\AlumnosGruposController.cs" />
     <Compile Include="ApplicationController\Cat_TipoDocumentoController.cs" />
     <Compile Include="ApplicationController\CuestionariosController.cs" />
     <Compile Include="ApplicationController\InstruccionesController.cs" />
@@ -80,17 +78,12 @@
     <Compile Include="ApplicationController\PreguntasController.cs" />
     <Compile Include="ApplicationController\QuimestreController.cs" />
     <Compile Include="ApplicationController\RespuestasController.cs" />
+    <Compile Include="ApplicationController\UsuarioController.cs" />
     <Compile Include="Form1.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Form1.Designer.cs">
       <DependentUpon>Form1.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Forms\AlumnosGrupos.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Forms\AlumnosGrupos.Designer.cs">
-      <DependentUpon>AlumnosGrupos.cs</DependentUpon>
     </Compile>
     <Compile Include="Forms\Cat_TipoDocumento.cs">
       <SubType>Form</SubType>
@@ -152,12 +145,6 @@
     <Compile Include="Forms\FormularioResolverPreguntas.Designer.cs">
       <DependentUpon>FormularioResolverPreguntas.cs</DependentUpon>
     </Compile>
-    <Compile Include="Forms\IngresoAlumnos.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Forms\IngresoAlumnos.Designer.cs">
-      <DependentUpon>IngresoAlumnos.cs</DependentUpon>
-    </Compile>
     <Compile Include="Forms\Loggin.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -166,8 +153,6 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="ViewModel\AlumnosGruposViewModel.cs" />
-    <Compile Include="ViewModel\AlumnosViewModel.cs" />
     <Compile Include="ViewModel\Cat_TipoDocumentoViewModel.cs" />
     <Compile Include="ViewModel\CuestionariosViewModel.cs" />
     <Compile Include="ViewModel\InstruccionesViewModel.cs" />
@@ -175,9 +160,7 @@
     <Compile Include="ViewModel\PreguntasViewModel.cs" />
     <Compile Include="ViewModel\QuimestreViewModel.cs" />
     <Compile Include="ViewModel\RespuestasViewModel.cs" />
-    <EmbeddedResource Include="Forms\AlumnosGrupos.resx">
-      <DependentUpon>AlumnosGrupos.cs</DependentUpon>
-    </EmbeddedResource>
+    <Compile Include="ViewModel\UsuarioViewModel.cs" />
     <EmbeddedResource Include="Forms\Cat_TipoDocumento.resx">
       <DependentUpon>Cat_TipoDocumento.cs</DependentUpon>
     </EmbeddedResource>
@@ -201,9 +184,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\FormularioResolverPreguntas.resx">
       <DependentUpon>FormularioResolverPreguntas.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Forms\IngresoAlumnos.resx">
-      <DependentUpon>IngresoAlumnos.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\Loggin.resx">
       <DependentUpon>Loggin.cs</DependentUpon>

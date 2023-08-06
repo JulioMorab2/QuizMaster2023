@@ -17,7 +17,7 @@ namespace QuizMaster.Infra.DataAcces.Repository
                 using (var context = new QuizMasterEntities1())
                 {
                     var resultado = (from cat in context.Preguntas
-                                     where cat.IdCuestionario == id 
+                                     //where cat.IdCuestionario == id 
                                      select cat).ToList();
                     return resultado;
                 }

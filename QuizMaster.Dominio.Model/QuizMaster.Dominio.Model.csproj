@@ -44,8 +44,6 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Abstractions\IAlumnosGruposRepository.cs" />
-    <Compile Include="Abstractions\IAlumnosRepository.cs" />
     <Compile Include="Abstractions\IBaseRepository.cs" />
     <Compile Include="Abstractions\ICat_TipoDocumentoRepository.cs" />
     <Compile Include="Abstractions\ICuestionariosRepository.cs" />
@@ -54,6 +52,7 @@
     <Compile Include="Abstractions\IPreguntasRepository.cs" />
     <Compile Include="Abstractions\IQuimestreRepository.cs" />
     <Compile Include="Abstractions\IRespuestasRepository.cs" />
+    <Compile Include="Abstractions\IUsuarioRepository.cs" />
     <Compile Include="Class1.cs" />
     <Compile Include="Entities\Alumnos.cs">
       <DependentUpon>Model1.tt</DependentUpon>
