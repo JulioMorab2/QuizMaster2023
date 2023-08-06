@@ -21,13 +21,13 @@ namespace QuizMaster.UI.Windows.ApplicationController
         }
         public bool InsertarRespuestas(RespuestasViewModel NuevaRespuesta)
         {
-            Respuestas nuevaRespuesta = new Respuestas();
+            Respuestas nuevoRegistro = new Respuestas();
             try
             {
-                nuevaRespuesta.Preguntas = nuevaRespuesta.Preguntas;
-                nuevaRespuesta.Respuesta = nuevaRespuesta.Respuesta;
-                nuevaRespuesta.EsCorrecta = nuevaRespuesta.EsCorrecta;
-                servicesRespuestas.InsertarRespuestas(nuevaRespuesta);
+                nuevoRegistro.IDPregunta = NuevaRespuesta.IDPregunta;
+                nuevoRegistro.Respuesta = NuevaRespuesta.Respuesta;
+                nuevoRegistro.EsCorrecta = NuevaRespuesta.EsCorrecta;
+                servicesRespuestas.InsertarRespuestas(nuevoRegistro);
                 return true;
             }
             catch (Exception ex) 

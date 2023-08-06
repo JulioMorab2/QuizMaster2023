@@ -1,4 +1,5 @@
-﻿using QuizMaster.UI.Windows.ApplicationController;
+﻿using QuizMaster.Dominio.Model.Entities;
+using QuizMaster.UI.Windows.ApplicationController;
 using QuizMaster.UI.Windows.ViewModel;
 using System;
 using System.Collections.Generic;
@@ -57,6 +58,7 @@ namespace FormulariosQuizMaster
                 MessageBox.Show("Error al insertar Respuestas");
             }
         }
+
 
         private void ListarPreguntaRespuestas()
         {
@@ -125,37 +127,33 @@ namespace FormulariosQuizMaster
                 return;
             }
 
+            InsertarPregunta();
 
+            preguntasViewModel = new PreguntasViewModel();
             respuestasViewModel = new RespuestasViewModel();
 
             respuestasViewModel.IDPregunta = preguntasViewModel.IDPregunta;
-
-            // Respuesta 1
-            RespuestasViewModel respuesta1 = new RespuestasViewModel();
-            respuesta1.Respuesta = textBoxParaEscribirRespuesta1.Text;
-            respuesta1.EsCorrecta = radioButtonRespuesta1.Checked;
-
-
-            // Respuesta 2
-            RespuestasViewModel respuesta2 = new RespuestasViewModel();
-            respuesta2.Respuesta = textBoxParaEscribirRespuesta2.Text;
-            respuesta2.EsCorrecta = radioButtonRespuesta2.Checked;
-
-
-            // Respuesta 3
-            RespuestasViewModel respuesta3 = new RespuestasViewModel();
-            respuesta3.Respuesta = textBoxParaEscribirRespuesta3.Text;
-            respuesta3.EsCorrecta = radioButtonRespuesta3.Checked;
-
-
-            // Respuesta 4
-            RespuestasViewModel respuesta4 = new RespuestasViewModel();
-            respuesta4.Respuesta = textBoxParaEscribirRespuesta4.Text;
-            respuesta4.EsCorrecta = radioButtonRespuesta4.Checked;
-
-
-            InsertarPregunta();
+            respuestasViewModel.Respuesta = textBoxParaEscribirRespuesta1.Text;
+            respuestasViewModel.EsCorrecta = radioButtonRespuesta1.Checked;
             InsertarRespuestas();
+
+            respuestasViewModel.IDPregunta = preguntasViewModel.IDPregunta;
+            respuestasViewModel.Respuesta = textBoxParaEscribirRespuesta2.Text;
+            respuestasViewModel.EsCorrecta = radioButtonRespuesta2.Checked;
+            InsertarRespuestas();
+
+            respuestasViewModel.IDPregunta = preguntasViewModel.IDPregunta;
+            respuestasViewModel.Respuesta = textBoxParaEscribirRespuesta3.Text;
+            respuestasViewModel.EsCorrecta = radioButtonRespuesta3.Checked;
+            InsertarRespuestas();
+
+            respuestasViewModel.IDPregunta = preguntasViewModel.IDPregunta;
+            respuestasViewModel.Respuesta = textBoxParaEscribirRespuesta4.Text;
+            respuestasViewModel.EsCorrecta = radioButtonRespuesta4.Checked;
+            InsertarRespuestas();
+
+
+
             ListarPreguntaRespuestas();
 
 
