@@ -54,6 +54,7 @@
     <Compile Include="Abstractions\IPreguntasRepository.cs" />
     <Compile Include="Abstractions\IQuimestreRepository.cs" />
     <Compile Include="Abstractions\IRespuestasRepository.cs" />
+    <Compile Include="Abstractions\IUsusarioRepository.cs" />
     <Compile Include="Class1.cs" />
     <Compile Include="Entities\Alumnos.cs">
       <DependentUpon>Model1.tt</DependentUpon>

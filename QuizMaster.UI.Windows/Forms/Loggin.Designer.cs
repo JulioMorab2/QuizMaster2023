@@ -28,91 +28,133 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.label1 = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.textBox2 = new System.Windows.Forms.TextBox();
-            this.label2 = new System.Windows.Forms.Label();
-            this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.button1 = new System.Windows.Forms.Button();
-            this.groupBox1.SuspendLayout();
+            this.metroButton1 = new MetroFramework.Controls.MetroButton();
+            this.metroLabel1 = new MetroFramework.Controls.MetroLabel();
+            this.metroLabel2 = new MetroFramework.Controls.MetroLabel();
+            this.mtxtUsuarios = new MetroFramework.Controls.MetroTextBox();
+            this.mtxtUsuariocontraseña = new MetroFramework.Controls.MetroTextBox();
             this.SuspendLayout();
             // 
-            // label1
+            // metroButton1
             // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(31, 35);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(43, 13);
-            this.label1.TabIndex = 0;
-            this.label1.Text = "Usuario";
+            this.metroButton1.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.metroButton1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(255)))));
+            this.metroButton1.Location = new System.Drawing.Point(208, 133);
+            this.metroButton1.Name = "metroButton1";
+            this.metroButton1.Size = new System.Drawing.Size(75, 23);
+            this.metroButton1.TabIndex = 6;
+            this.metroButton1.Text = "Ingresar";
+            this.metroButton1.UseSelectable = true;
+            this.metroButton1.Click += new System.EventHandler(this.metroButton1_Click);
             // 
-            // textBox1
+            // metroLabel1
             // 
-            this.textBox1.Location = new System.Drawing.Point(107, 35);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(223, 20);
-            this.textBox1.TabIndex = 1;
+            this.metroLabel1.AutoSize = true;
+            this.metroLabel1.Location = new System.Drawing.Point(38, 37);
+            this.metroLabel1.Name = "metroLabel1";
+            this.metroLabel1.Size = new System.Drawing.Size(53, 19);
+            this.metroLabel1.TabIndex = 7;
+            this.metroLabel1.Text = "Usuario";
             // 
-            // textBox2
+            // metroLabel2
             // 
-            this.textBox2.Location = new System.Drawing.Point(107, 82);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(223, 20);
-            this.textBox2.TabIndex = 3;
+            this.metroLabel2.AutoSize = true;
+            this.metroLabel2.Location = new System.Drawing.Point(38, 79);
+            this.metroLabel2.Name = "metroLabel2";
+            this.metroLabel2.Size = new System.Drawing.Size(75, 19);
+            this.metroLabel2.TabIndex = 8;
+            this.metroLabel2.Text = "Contraseña";
             // 
-            // label2
+            // mtxtUsuarios
             // 
-            this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(31, 82);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(61, 13);
-            this.label2.TabIndex = 2;
-            this.label2.Text = "Contraseña";
+            this.mtxtUsuarios.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.mtxtUsuarios.BackColor = System.Drawing.Color.LightSteelBlue;
             // 
-            // groupBox1
             // 
-            this.groupBox1.Controls.Add(this.button1);
-            this.groupBox1.Controls.Add(this.textBox2);
-            this.groupBox1.Controls.Add(this.textBox1);
-            this.groupBox1.Controls.Add(this.label2);
-            this.groupBox1.Controls.Add(this.label1);
-            this.groupBox1.Location = new System.Drawing.Point(63, 36);
-            this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(475, 153);
-            this.groupBox1.TabIndex = 4;
-            this.groupBox1.TabStop = false;
-            this.groupBox1.Text = "User";
             // 
-            // button1
+            this.mtxtUsuarios.CustomButton.Image = null;
+            this.mtxtUsuarios.CustomButton.Location = new System.Drawing.Point(170, 1);
+            this.mtxtUsuarios.CustomButton.Name = "";
+            this.mtxtUsuarios.CustomButton.Size = new System.Drawing.Size(21, 21);
+            this.mtxtUsuarios.CustomButton.Style = MetroFramework.MetroColorStyle.Blue;
+            this.mtxtUsuarios.CustomButton.TabIndex = 1;
+            this.mtxtUsuarios.CustomButton.Theme = MetroFramework.MetroThemeStyle.Light;
+            this.mtxtUsuarios.CustomButton.UseSelectable = true;
+            this.mtxtUsuarios.CustomButton.Visible = false;
+            this.mtxtUsuarios.Lines = new string[0];
+            this.mtxtUsuarios.Location = new System.Drawing.Point(155, 37);
+            this.mtxtUsuarios.MaxLength = 32767;
+            this.mtxtUsuarios.Name = "mtxtUsuarios";
+            this.mtxtUsuarios.PasswordChar = '\0';
+            this.mtxtUsuarios.ScrollBars = System.Windows.Forms.ScrollBars.None;
+            this.mtxtUsuarios.SelectedText = "";
+            this.mtxtUsuarios.SelectionLength = 0;
+            this.mtxtUsuarios.SelectionStart = 0;
+            this.mtxtUsuarios.ShortcutsEnabled = true;
+            this.mtxtUsuarios.Size = new System.Drawing.Size(192, 23);
+            this.mtxtUsuarios.TabIndex = 9;
+            this.mtxtUsuarios.Tag = "";
+            this.mtxtUsuarios.UseSelectable = true;
+            this.mtxtUsuarios.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
+            this.mtxtUsuarios.WaterMarkFont = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Pixel);
             // 
-            this.button1.Location = new System.Drawing.Point(370, 82);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(75, 23);
-            this.button1.TabIndex = 4;
-            this.button1.Text = "Ingresar";
-            this.button1.UseVisualStyleBackColor = true;
+            // mtxtUsuariocontraseña
+            // 
+            this.mtxtUsuariocontraseña.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            // 
+            // 
+            // 
+            this.mtxtUsuariocontraseña.CustomButton.Image = null;
+            this.mtxtUsuariocontraseña.CustomButton.Location = new System.Drawing.Point(170, 1);
+            this.mtxtUsuariocontraseña.CustomButton.Name = "";
+            this.mtxtUsuariocontraseña.CustomButton.Size = new System.Drawing.Size(21, 21);
+            this.mtxtUsuariocontraseña.CustomButton.Style = MetroFramework.MetroColorStyle.Blue;
+            this.mtxtUsuariocontraseña.CustomButton.TabIndex = 1;
+            this.mtxtUsuariocontraseña.CustomButton.Theme = MetroFramework.MetroThemeStyle.Light;
+            this.mtxtUsuariocontraseña.CustomButton.UseSelectable = true;
+            this.mtxtUsuariocontraseña.CustomButton.Visible = false;
+            this.mtxtUsuariocontraseña.Lines = new string[0];
+            this.mtxtUsuariocontraseña.Location = new System.Drawing.Point(155, 88);
+            this.mtxtUsuariocontraseña.MaxLength = 32767;
+            this.mtxtUsuariocontraseña.Name = "mtxtUsuariocontraseña";
+            this.mtxtUsuariocontraseña.PasswordChar = '\0';
+            this.mtxtUsuariocontraseña.ScrollBars = System.Windows.Forms.ScrollBars.None;
+            this.mtxtUsuariocontraseña.SelectedText = "";
+            this.mtxtUsuariocontraseña.SelectionLength = 0;
+            this.mtxtUsuariocontraseña.SelectionStart = 0;
+            this.mtxtUsuariocontraseña.ShortcutsEnabled = true;
+            this.mtxtUsuariocontraseña.Size = new System.Drawing.Size(192, 23);
+            this.mtxtUsuariocontraseña.TabIndex = 10;
+            this.mtxtUsuariocontraseña.UseSelectable = true;
+            this.mtxtUsuariocontraseña.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
+            this.mtxtUsuariocontraseña.WaterMarkFont = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Pixel);
             // 
             // Loggin
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(594, 243);
-            this.Controls.Add(this.groupBox1);
+            this.ClientSize = new System.Drawing.Size(438, 197);
+            this.Controls.Add(this.mtxtUsuariocontraseña);
+            this.Controls.Add(this.mtxtUsuarios);
+            this.Controls.Add(this.metroLabel2);
+            this.Controls.Add(this.metroLabel1);
+            this.Controls.Add(this.metroButton1);
             this.Name = "Loggin";
-            this.Text = "Loggin";
-            this.groupBox1.ResumeLayout(false);
-            this.groupBox1.PerformLayout();
+            this.TextAlign = MetroFramework.Forms.MetroFormTextAlign.Center;
+            this.Load += new System.EventHandler(this.Loggin_Load);
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
         #endregion
 
-        private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.TextBox textBox1;
-        private System.Windows.Forms.TextBox textBox2;
-        private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.GroupBox groupBox1;
-        private System.Windows.Forms.Button button1;
+        private MetroFramework.Controls.MetroButton metroButton1;
+        private MetroFramework.Controls.MetroLabel metroLabel1;
+        private MetroFramework.Controls.MetroLabel metroLabel2;
+        private MetroFramework.Controls.MetroTextBox mtxtUsuarios;
+        private MetroFramework.Controls.MetroTextBox mtxtUsuariocontraseña;
     }
 }

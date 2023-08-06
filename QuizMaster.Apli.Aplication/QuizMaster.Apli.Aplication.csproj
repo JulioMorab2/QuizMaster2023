@@ -54,6 +54,7 @@
     <Compile Include="EntityServices\PreguntasServices.cs" />
     <Compile Include="EntityServices\QuimestreServices.cs" />
     <Compile Include="EntityServices\RespuestasServices.cs" />
+    <Compile Include="EntityServices\UsuariosServices.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>

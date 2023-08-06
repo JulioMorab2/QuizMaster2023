@@ -75,6 +75,7 @@
     <Compile Include="Repository\QuimestreRepository.cs" />
     <Compile Include="Repository\InstruccionesRepository.cs" />
     <Compile Include="Repository\RespuestasRepository.cs" />
+    <Compile Include="Repository\UsuariosRepository.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\QuizMaster.Dominio.Model\QuizMaster.Dominio.Model.csproj">

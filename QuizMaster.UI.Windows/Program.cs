@@ -17,7 +17,7 @@ namespace QuizMaster.UI.Windows
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new IngresoAlumnos());
+            Application.Run(new Loggin());
         }
     }
 }
