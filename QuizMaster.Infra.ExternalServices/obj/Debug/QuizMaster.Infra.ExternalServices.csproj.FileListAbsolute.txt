@@ -1,7 +1,0 @@
-C:\ProyectosUisraelNet\QuizMaster\QuizMaster\QuizMaster.Infra.ExternalServices\bin\Debug\QuizMaster.Infra.ExternalServices.dll.config
-C:\ProyectosUisraelNet\QuizMaster\QuizMaster\QuizMaster.Infra.ExternalServices\bin\Debug\QuizMaster.Infra.ExternalServices.dll
-C:\ProyectosUisraelNet\QuizMaster\QuizMaster\QuizMaster.Infra.ExternalServices\bin\Debug\QuizMaster.Infra.ExternalServices.pdb
-C:\ProyectosUisraelNet\QuizMaster\QuizMaster\QuizMaster.Infra.ExternalServices\obj\Debug\QuizMaster.Infra.ExternalServices.csproj.AssemblyReference.cache
-C:\ProyectosUisraelNet\QuizMaster\QuizMaster\QuizMaster.Infra.ExternalServices\obj\Debug\QuizMaster.Infra.ExternalServices.csproj.CoreCompileInputs.cache
-C:\ProyectosUisraelNet\QuizMaster\QuizMaster\QuizMaster.Infra.ExternalServices\obj\Debug\QuizMaster.Infra.ExternalServices.dll
-C:\ProyectosUisraelNet\QuizMaster\QuizMaster\QuizMaster.Infra.ExternalServices\obj\Debug\QuizMaster.Infra.ExternalServices.pdb

@@ -1,7 +1,0 @@
-C:\ProyectosUisraelNet\QuizMaster\QuizMaster\QuizMaster.Infra.EmailServices\bin\Debug\QuizMaster.Infra.EmailServices.dll.config
-C:\ProyectosUisraelNet\QuizMaster\QuizMaster\QuizMaster.Infra.EmailServices\bin\Debug\QuizMaster.Infra.EmailServices.dll
-C:\ProyectosUisraelNet\QuizMaster\QuizMaster\QuizMaster.Infra.EmailServices\bin\Debug\QuizMaster.Infra.EmailServices.pdb
-C:\ProyectosUisraelNet\QuizMaster\QuizMaster\QuizMaster.Infra.EmailServices\obj\Debug\QuizMaster.Infra.EmailServices.csproj.AssemblyReference.cache
-C:\ProyectosUisraelNet\QuizMaster\QuizMaster\QuizMaster.Infra.EmailServices\obj\Debug\QuizMaster.Infra.EmailServices.csproj.CoreCompileInputs.cache
-C:\ProyectosUisraelNet\QuizMaster\QuizMaster\QuizMaster.Infra.EmailServices\obj\Debug\QuizMaster.Infra.EmailServices.dll
-C:\ProyectosUisraelNet\QuizMaster\QuizMaster\QuizMaster.Infra.EmailServices\obj\Debug\QuizMaster.Infra.EmailServices.pdb
