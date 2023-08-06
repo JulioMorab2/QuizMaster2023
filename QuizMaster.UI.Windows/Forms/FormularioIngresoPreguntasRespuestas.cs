@@ -34,15 +34,27 @@ namespace FormulariosQuizMaster
             comboBoxListaDeCuestionarios.DisplayMember = "IdInstrucciones";
         }
 
-        private void InsertarPreguntaRespuestas()
+        private void InsertarPregunta()
         {
-            if (respuestasController.InsertarRespuestas(respuestasViewModel))
+            if ( preguntasController.InsertarPregunta(preguntasViewModel) )
             {
-                MessageBox.Show("Pregunta y Respuestas ingreadaso correctamente");
+                MessageBox.Show("Pregunta ingreasada correctamente");
             }
             else
             {
-                MessageBox.Show("Error al insertar el pregunta y respuestas");
+                MessageBox.Show("Error al insertar Pregunta");
+            }
+        }
+
+        private void InsertarRespuestas()
+        {
+            if (respuestasController.InsertarRespuestas(respuestasViewModel))
+            {
+                MessageBox.Show("Respuestas ingresada correctamente");
+            }
+            else
+            {
+                MessageBox.Show("Error al insertar Respuestas");
             }
         }
 
@@ -85,8 +97,23 @@ namespace FormulariosQuizMaster
 
         private void buttonGuardarPreguntasRespuesta_Click(object sender, EventArgs e)
         {
-            respuestasViewModel = new RespuestasViewModel();
+            
             preguntasViewModel = new PreguntasViewModel();
+
+            preguntasViewModel.Pregunta = textBoxparaEscribirPregunta.Text;
+
+            if (dateTimePickerFechaIngresoPandR.Value != null)
+            {
+                preguntasViewModel.fecha = dateTimePickerFechaIngresoPandR.Value;
+            }
+            else
+            {
+                // Si la fecha seleccionada es nula, decide qué acción tomar o asigna otro valor predeterminado si es necesario
+                preguntasViewModel.fecha = null; // Opcionalmente puedes asignar otro valor predeterminado en lugar de null
+            }
+
+            preguntasViewModel.puntaje = decimal.Parse(textBoxPuntajeIngresoPandR.Text);
+
 
             if (comboBoxListaDeCuestionarios.SelectedValue != null && int.TryParse(comboBoxListaDeCuestionarios.SelectedValue.ToString(), out int IdCuestionario))
             {
@@ -98,25 +125,37 @@ namespace FormulariosQuizMaster
                 return;
             }
 
-            preguntasViewModel.Pregunta = textBoxparaEscribirPregunta.Text;
+
+            respuestasViewModel = new RespuestasViewModel();
+
+            respuestasViewModel.IDPregunta = preguntasViewModel.IDPregunta;
 
             // Respuesta 1
-            respuestasViewModel.Respuesta = textBoxParaEscribirRespuesta1.Text;
-            respuestasViewModel.EsCorrecta = radioButtonRespuesta1.Checked;
+            RespuestasViewModel respuesta1 = new RespuestasViewModel();
+            respuesta1.Respuesta = textBoxParaEscribirRespuesta1.Text;
+            respuesta1.EsCorrecta = radioButtonRespuesta1.Checked;
+
 
             // Respuesta 2
-            respuestasViewModel.Respuesta = textBoxParaEscribirRespuesta2.Text;
-            respuestasViewModel.EsCorrecta = radioButtonRespuesta2.Checked;
+            RespuestasViewModel respuesta2 = new RespuestasViewModel();
+            respuesta2.Respuesta = textBoxParaEscribirRespuesta2.Text;
+            respuesta2.EsCorrecta = radioButtonRespuesta2.Checked;
+
 
             // Respuesta 3
-            respuestasViewModel.Respuesta = textBoxParaEscribirRespuesta3.Text;
-            respuestasViewModel.EsCorrecta = radioButtonRespuesta3.Checked;
+            RespuestasViewModel respuesta3 = new RespuestasViewModel();
+            respuesta3.Respuesta = textBoxParaEscribirRespuesta3.Text;
+            respuesta3.EsCorrecta = radioButtonRespuesta3.Checked;
+
 
             // Respuesta 4
-            respuestasViewModel.Respuesta = textBoxParaEscribirRespuesta4.Text;
-            respuestasViewModel.EsCorrecta = radioButtonRespuesta4.Checked;
+            RespuestasViewModel respuesta4 = new RespuestasViewModel();
+            respuesta4.Respuesta = textBoxParaEscribirRespuesta4.Text;
+            respuesta4.EsCorrecta = radioButtonRespuesta4.Checked;
 
-            InsertarPreguntaRespuestas();
+
+            InsertarPregunta();
+            InsertarRespuestas();
             ListarPreguntaRespuestas();
 
 

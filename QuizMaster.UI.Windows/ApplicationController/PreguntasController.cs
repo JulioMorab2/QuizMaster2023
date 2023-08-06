@@ -13,15 +13,23 @@ namespace QuizMaster.UI.Windows.ApplicationController
     {
         private PreguntasServices servicesPreguntas;
 
+
+        public PreguntasController()
+        {
+            // Inicializar servicesPreguntas en el constructor
+            servicesPreguntas = new PreguntasServices();
+        }
+
+
         public bool  InsertarPregunta(PreguntasViewModel NuevaPregunta)
         {
             Preguntas nuevoRegistro = new Preguntas();
             try
             {
                 nuevoRegistro.Pregunta = NuevaPregunta.Pregunta;
+                nuevoRegistro.fecha = NuevaPregunta.fecha;
                 nuevoRegistro.puntaje = NuevaPregunta.puntaje;
                 nuevoRegistro.IdCuestionario = NuevaPregunta.IdCuestionario;
-
                 servicesPreguntas.InsertarPregunta(nuevoRegistro);
                 return true;
 
