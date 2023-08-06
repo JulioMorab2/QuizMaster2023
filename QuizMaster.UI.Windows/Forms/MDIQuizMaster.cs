@@ -108,5 +108,10 @@ namespace QuizMaster.UI.Windows.Forms
         {
 
         }
+
+        private void menuStrip_ItemClicked(object sender, ToolStripItemClickedEventArgs e)
+        {
+
+        }
     }
 }
