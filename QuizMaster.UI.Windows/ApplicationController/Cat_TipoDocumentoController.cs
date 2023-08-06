@@ -73,10 +73,7 @@ namespace QuizMaster.UI.Windows.ApplicationController
                     {
                         IDCat_TipoDocumento = item.IDCat_TipoDocumento,
                         Descripcion = item.Descripcion,
-                        Estado = item.Estado,
-                        descripcionCombo= item.IDCat_TipoDocumento+".-"+item.Descripcion
-
-
+                        Estado = item.Estado
                     });
                 }
                 return resultadoEnvio;

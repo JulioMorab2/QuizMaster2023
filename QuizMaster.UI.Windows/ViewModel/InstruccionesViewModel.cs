@@ -8,7 +8,7 @@ namespace QuizMaster.UI.Windows.ViewModel
 {
     public class InstruccionesViewModel
     {
-        public int IdIdInstrucciones { get; set; }
+        public int IdInstrucciones { get; set; }
         public string Texto { get;  set; }
         
     }

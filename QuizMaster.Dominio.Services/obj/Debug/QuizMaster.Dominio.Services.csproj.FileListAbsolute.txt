@@ -12,10 +12,3 @@ C:\Users\Juls\Downloads\Germán\Proyecto\QuizMasterDOMINGO\QuizMaster\QuizMaster
 C:\Users\Juls\Downloads\Germán\Proyecto\QuizMasterDOMINGO\QuizMaster\QuizMaster2023\QuizMaster.Dominio.Services\obj\Debug\QuizMaster.Dominio.Services.csproj.CoreCompileInputs.cache
 C:\Users\Juls\Downloads\Germán\Proyecto\QuizMasterDOMINGO\QuizMaster\QuizMaster2023\QuizMaster.Dominio.Services\obj\Debug\QuizMaster.Dominio.Services.dll
 C:\Users\Juls\Downloads\Germán\Proyecto\QuizMasterDOMINGO\QuizMaster\QuizMaster2023\QuizMaster.Dominio.Services\obj\Debug\QuizMaster.Dominio.Services.pdb
-C:\ProyectosUisraelNet\QuizMaster\QuizMasterLocal\QuizMaster.Dominio.Services\bin\Debug\QuizMaster.Dominio.Services.dll.config
-C:\ProyectosUisraelNet\QuizMaster\QuizMasterLocal\QuizMaster.Dominio.Services\bin\Debug\QuizMaster.Dominio.Services.dll
-C:\ProyectosUisraelNet\QuizMaster\QuizMasterLocal\QuizMaster.Dominio.Services\bin\Debug\QuizMaster.Dominio.Services.pdb
-C:\ProyectosUisraelNet\QuizMaster\QuizMasterLocal\QuizMaster.Dominio.Services\obj\Debug\QuizMaster.Dominio.Services.csproj.AssemblyReference.cache
-C:\ProyectosUisraelNet\QuizMaster\QuizMasterLocal\QuizMaster.Dominio.Services\obj\Debug\QuizMaster.Dominio.Services.csproj.CoreCompileInputs.cache
-C:\ProyectosUisraelNet\QuizMaster\QuizMasterLocal\QuizMaster.Dominio.Services\obj\Debug\QuizMaster.Dominio.Services.dll
-C:\ProyectosUisraelNet\QuizMaster\QuizMasterLocal\QuizMaster.Dominio.Services\obj\Debug\QuizMaster.Dominio.Services.pdb

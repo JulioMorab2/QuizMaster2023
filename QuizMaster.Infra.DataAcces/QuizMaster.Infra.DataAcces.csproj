@@ -65,8 +65,6 @@
       <DependentUpon>Model1.edmx</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Repository\AlumnosGruposRepository.cs" />
-    <Compile Include="Repository\AlumnosRepository.cs" />
     <Compile Include="Repository\BaseRepository.cs" />
     <Compile Include="Repository\Cat_TipoDocumentoRepository.cs" />
     <Compile Include="Repository\CuestionariosRepository.cs" />
@@ -75,7 +73,11 @@
     <Compile Include="Repository\QuimestreRepository.cs" />
     <Compile Include="Repository\InstruccionesRepository.cs" />
     <Compile Include="Repository\RespuestasRepository.cs" />
+<<<<<<< HEAD
     <Compile Include="Repository\UsuariosRepository.cs" />
+=======
+    <Compile Include="Repository\UsuarioRepository.cs" />
+>>>>>>> 5c343ea61a901a9faac2d6b34cb6dd6cc56b19fc
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\QuizMaster.Dominio.Model\QuizMaster.Dominio.Model.csproj">

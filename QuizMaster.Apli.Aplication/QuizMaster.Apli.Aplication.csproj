@@ -45,8 +45,6 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Class1.cs" />
-    <Compile Include="EntityServices\AlumnosGruposServices.cs" />
-    <Compile Include="EntityServices\AlumnosServices.cs" />
     <Compile Include="EntityServices\Cat_TipoDocumentoServices.cs" />
     <Compile Include="EntityServices\CuestionariosServices.cs" />
     <Compile Include="EntityServices\InstruccionesServices.cs" />
@@ -54,7 +52,11 @@
     <Compile Include="EntityServices\PreguntasServices.cs" />
     <Compile Include="EntityServices\QuimestreServices.cs" />
     <Compile Include="EntityServices\RespuestasServices.cs" />
+<<<<<<< HEAD
     <Compile Include="EntityServices\UsuariosServices.cs" />
+=======
+    <Compile Include="EntityServices\UsuarioServices.cs" />
+>>>>>>> 5c343ea61a901a9faac2d6b34cb6dd6cc56b19fc
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>

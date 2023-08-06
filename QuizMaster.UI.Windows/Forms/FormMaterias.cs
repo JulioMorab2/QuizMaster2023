@@ -49,7 +49,7 @@ namespace QuizMaster.UI.Windows.Forms
 
         private void button1_Click(object sender, EventArgs e)
         {
-            materiaViewModel.NombreMateria = btnMateria.Text;
+            materiaViewModel.NombreMateria = txbMateria.Text;
 
             InsertarMaterias();
 

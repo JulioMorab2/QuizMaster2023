@@ -24,7 +24,7 @@ namespace QuizMaster.UI.Windows.ApplicationController
             Instrucciones vnuevaInstruccion = new Instrucciones();
             try
             {
-                vnuevaInstruccion.IdInstrucciones = nuevaInstruccion.IdIdInstrucciones;
+                vnuevaInstruccion.IdInstrucciones = nuevaInstruccion.IdInstrucciones;
                 vnuevaInstruccion.Texto = nuevaInstruccion.Texto;
                 servicesInstrucciones.InsertarInstrucciones(vnuevaInstruccion);
                 return true;
@@ -42,7 +42,7 @@ namespace QuizMaster.UI.Windows.ApplicationController
             Instrucciones vnuevaInstruccion = new Instrucciones();
             try
             {
-                vnuevaInstruccion.IdInstrucciones = nuevaInstruccion.IdIdInstrucciones;
+                vnuevaInstruccion.IdInstrucciones = nuevaInstruccion.IdInstrucciones;
                 vnuevaInstruccion.Texto = vnuevaInstruccion.Texto;
                 servicesInstrucciones.ActualizarInstrucciones(vnuevaInstruccion);
                 return true;
@@ -65,7 +65,7 @@ namespace QuizMaster.UI.Windows.ApplicationController
                 {
                     resultadoEnvio.Add(new InstruccionesViewModel
                     {
-                        IdIdInstrucciones = item.IdInstrucciones,
+                        IdInstrucciones = item.IdInstrucciones,
                         Texto = item.Texto
                     });
                 }

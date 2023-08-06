@@ -19,21 +19,20 @@ namespace QuizMaster.UI.Windows.ApplicationController
             servicesCuestionarios = new CuestionariosServices();
 
         }
-        public bool InsertarCuestionarios(CuestionariosViewModel NuevoCuestionarios)
+        public bool InsertarCuestionarios(CuestionariosViewModel cuestionariosViewModel)
         {
             Cuestionarios nuevoRegistro = new Cuestionarios();
             try
             {
-                nuevoRegistro.IdInstrucciones = NuevoCuestionarios.IdInstrucciones;
-                nuevoRegistro.IndicadoresEvaluacion = NuevoCuestionarios.IndicadoresEvaluacion;
-                nuevoRegistro.Nivel = NuevoCuestionarios.Nivel;
-                nuevoRegistro.Curso = NuevoCuestionarios.Curso;
-                nuevoRegistro.Area = NuevoCuestionarios.Area;
-                nuevoRegistro.PorcentajeAprendizaje = NuevoCuestionarios.PorcentajeAprendizaje;
-                nuevoRegistro.IDQuimestre |= NuevoCuestionarios.IDQuimestre;
-                nuevoRegistro.IDUsuario = NuevoCuestionarios.IDUsuario;
-                nuevoRegistro.IDMateria = NuevoCuestionarios.IDMateria;
-
+                nuevoRegistro.IdInstrucciones = cuestionariosViewModel.IdInstrucciones;
+                nuevoRegistro.IndicadoresEvaluacion = cuestionariosViewModel.IndicadoresEvaluacion;
+                nuevoRegistro.Nivel = cuestionariosViewModel.Nivel;
+                nuevoRegistro.Curso = cuestionariosViewModel.Curso;
+                nuevoRegistro.Area = cuestionariosViewModel.Area;
+                nuevoRegistro.PorcentajeAprendizaje = cuestionariosViewModel.PorcentajeAprendizaje;
+                nuevoRegistro.IDQuimestre = cuestionariosViewModel.IDQuimestre;
+                nuevoRegistro.IDUsuario = cuestionariosViewModel.IDUsuario;
+                nuevoRegistro.IDMateria = cuestionariosViewModel.IDMateria;
                 servicesCuestionarios.InsertarCuestionarios(nuevoRegistro);
                 return true;
 
@@ -56,7 +55,7 @@ namespace QuizMaster.UI.Windows.ApplicationController
                 nuevoRegistro.Curso = NuevoCuestionarios.Curso;
                 nuevoRegistro.Area = NuevoCuestionarios.Area;
                 nuevoRegistro.PorcentajeAprendizaje = NuevoCuestionarios.PorcentajeAprendizaje;
-                nuevoRegistro.IDQuimestre |= NuevoCuestionarios.IDQuimestre;
+                nuevoRegistro.IDQuimestre = NuevoCuestionarios.IDQuimestre;
                 nuevoRegistro.IDUsuario = NuevoCuestionarios.IDUsuario;
                 nuevoRegistro.IDMateria = NuevoCuestionarios.IDMateria;
                 servicesCuestionarios.ActualizarCuestionarios(nuevoRegistro);
@@ -83,11 +82,16 @@ namespace QuizMaster.UI.Windows.ApplicationController
                 {
                     resultadoEnvio.Add(new CuestionariosViewModel
                     {
+                        IdCuestionario = item.IdCuestionario,
                         IdInstrucciones = item.IdInstrucciones,
                         IndicadoresEvaluacion= item.IndicadoresEvaluacion,
                         Nivel = item.Nivel,
                         Curso = item.Curso,
                         Area = item.Area,
+                        PorcentajeAprendizaje = item.PorcentajeAprendizaje,
+                        IDQuimestre = item.IDQuimestre,
+                        IDUsuario = item.IDUsuario,
+                        IDMateria = item.IDMateria,
                         
                         
                     });
