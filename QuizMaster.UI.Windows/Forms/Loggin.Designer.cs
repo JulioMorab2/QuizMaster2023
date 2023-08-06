@@ -119,7 +119,7 @@
             this.mtxtUsuariocontraseña.Location = new System.Drawing.Point(155, 88);
             this.mtxtUsuariocontraseña.MaxLength = 32767;
             this.mtxtUsuariocontraseña.Name = "mtxtUsuariocontraseña";
-            this.mtxtUsuariocontraseña.PasswordChar = '\0';
+            this.mtxtUsuariocontraseña.PasswordChar = '*';
             this.mtxtUsuariocontraseña.ScrollBars = System.Windows.Forms.ScrollBars.None;
             this.mtxtUsuariocontraseña.SelectedText = "";
             this.mtxtUsuariocontraseña.SelectionLength = 0;
